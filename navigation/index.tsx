@@ -1,21 +1,38 @@
-import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import * as React from 'react';
-import { ColorSchemeName } from 'react-native';
+import {
+  NavigationContainer,
+  DefaultTheme,
+  DarkTheme,
+} from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import * as React from "react";
+import { ColorSchemeName } from "react-native";
+import MoviesScreen from "../screens/MoviesScreen";
+import MovieDetailsScreen from "../screens/MoviesScreen/MovieDetailsScreen";
 
-import NotFoundScreen from '../screens/NotFoundScreen';
-import { RootStackParamList } from '../types';
-import BottomTabNavigator from './BottomTabNavigator';
-import LinkingConfiguration from './LinkingConfiguration';
+import NotFoundScreen from "../screens/NotFoundScreen";
+import { RootStackParamList } from "../types";
+import { ScreenRoute } from "./constants";
+import LinkingConfiguration from "./LinkingConfiguration";
+import { createDrawerNavigator } from "@react-navigation/drawer";
 
 // If you are not familiar with React Navigation, we recommend going through the
 // "Fundamentals" guide: https://reactnavigation.org/docs/getting-started
-export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
+
+const Drawer = createDrawerNavigator();
+
+export default function Navigation({
+  colorScheme,
+}: {
+  colorScheme: ColorSchemeName;
+}) {
   return (
     <NavigationContainer
       linking={LinkingConfiguration}
-      theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <RootNavigator />
+      theme={colorScheme === "dark" ? DarkTheme : DefaultTheme}
+    >
+      <Drawer.Navigator initialRouteName="Home">
+        <Drawer.Screen name="Home" component={RootNavigator} />
+      </Drawer.Navigator>
     </NavigationContainer>
   );
 }
@@ -27,8 +44,16 @@ const Stack = createStackNavigator<RootStackParamList>();
 function RootNavigator() {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="Root" component={BottomTabNavigator} />
-      <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
+      <Stack.Screen name={ScreenRoute.ROOT} component={MoviesScreen} />
+      <Stack.Screen
+        name="NotFound"
+        component={NotFoundScreen}
+        options={{ title: "Oops!" }}
+      />
+      <Stack.Screen
+        name={ScreenRoute.MOVIE_DETAILS}
+        component={MovieDetailsScreen}
+      />
     </Stack.Navigator>
   );
 }

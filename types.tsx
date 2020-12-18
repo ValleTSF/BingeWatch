@@ -1,17 +1,22 @@
+import { MovieResult } from "./api/types";
+import { ScreenRoute } from "./navigation/constants";
+
 export type RootStackParamList = {
-  Root: undefined;
+  [ScreenRoute.ROOT]: undefined;
+  [ScreenRoute.MOVIE_DETAILS]: { movie: MovieResult };
   NotFound: undefined;
+  Movies: undefined;
 };
 
 export type BottomTabParamList = {
-  TabOne: undefined;
-  TabTwo: undefined;
+  Movies: undefined;
+  TVShows: undefined;
 };
 
 export type TabOneParamList = {
-  TabOneScreen: undefined;
+  MoviesScreen: undefined;
 };
 
 export type TabTwoParamList = {
-  TabTwoScreen: undefined;
+  TVShowsScreen: undefined;
 };
