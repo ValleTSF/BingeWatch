@@ -9,7 +9,6 @@ type Props = {
 };
 
 const MovieDetailsScreen: React.FC<Props> = (props) => {
-  props.route.params.movie;
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
       <Text>{props.route.params.movie.title}</Text>
