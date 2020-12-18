@@ -42,9 +42,6 @@ export default function PopularMoviesScreen() {
         data={data.results}
         renderItem={({ item }) => {
           const onPressMovie = () => {
-            console.log("====================================");
-            console.log(JSON.stringify(item, null, 3));
-            console.log("====================================");
             navigation.navigate(ScreenRoute.MOVIE_DETAILS, { movie: item });
           };
           return (
