@@ -13,9 +13,8 @@ export default function MoviesScreen() {
         width: Dimensions.get("window").width,
       }}
     >
-      <StatusBar backgroundColor="#b9042c" barStyle="dark-content" />
-
       <MovieNavigationBar />
+      <StatusBar backgroundColor="#b9042c" barStyle="dark-content" />
     </SafeAreaView>
   );
 }

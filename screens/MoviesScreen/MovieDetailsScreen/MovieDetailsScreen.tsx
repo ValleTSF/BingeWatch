@@ -12,7 +12,6 @@ type Props = {
 
 const MovieDetailsScreen: React.FC<Props> = (props) => {
   const { movie } = props.route.params;
-  console.log(movie);
   return (
     <View
       style={{
