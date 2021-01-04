@@ -10,14 +10,21 @@ import {
   Text,
   Right,
   Button,
+  Left,
 } from "native-base";
 import PopularMoviesScreen from "./PopularMoviesScreen";
 import * as S from "./styled";
+import { DrawerActions } from "@react-navigation/native";
 
-export default function MovieNavigationBar() {
+export default function MovieNavigationBar(props) {
   return (
     <Container>
       <Header style={{ backgroundColor: "#b9042c" }}>
+        <Left>
+          <Button transparent onPress={handleBurgerOnPress}>
+            <Icon name="menu" />
+          </Button>
+        </Left>
         <S.Header>Movies</S.Header>
       </Header>
       <Tabs>
@@ -41,3 +48,7 @@ export default function MovieNavigationBar() {
     </Container>
   );
 }
+
+const handleBurgerOnPress = () => {
+  props.navigation.dispatch(DrawerActions.openDrawer());
+};
