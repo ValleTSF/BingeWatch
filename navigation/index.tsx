@@ -14,6 +14,7 @@ import { RootStackParamList } from "../types";
 import { ScreenRoute } from "./constants";
 import LinkingConfiguration from "./LinkingConfiguration";
 import { createDrawerNavigator } from "@react-navigation/drawer";
+import { DrawerContent } from "../screens/DrawerContent";
 
 // If you are not familiar with React Navigation, we recommend going through the
 // "Fundamentals" guide: https://reactnavigation.org/docs/getting-started
@@ -30,7 +31,7 @@ export default function Navigation({
       linking={LinkingConfiguration}
       theme={colorScheme === "dark" ? DarkTheme : DefaultTheme}
     >
-      <Drawer.Navigator initialRouteName="Home">
+      <Drawer.Navigator drawerContent={(props) => <DrawerContent {...props} />}>
         <Drawer.Screen name="Home" component={RootNavigator} />
       </Drawer.Navigator>
     </NavigationContainer>

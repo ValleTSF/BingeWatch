@@ -19,11 +19,6 @@ export default function MovieNavigationBar() {
     <Container>
       <Header style={{ backgroundColor: "#b9042c" }}>
         <S.Header>Movies</S.Header>
-        <Right>
-          <Button transparent>
-            <Icon name="menu" />
-          </Button>
-        </Right>
       </Header>
       <Tabs>
         <Tab
