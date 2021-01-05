@@ -1,5 +1,4 @@
 import React from "react";
-import { View } from "react-native";
 import {
   Container,
   Header,
@@ -8,20 +7,18 @@ import {
   TabHeading,
   Icon,
   Text,
-  Right,
   Button,
   Left,
 } from "native-base";
 import PopularMoviesScreen from "./PopularMoviesScreen";
 import * as S from "./styled";
-import { DrawerActions } from "@react-navigation/native";
 
 export default function MovieNavigationBar(props) {
   return (
     <Container>
       <Header style={{ backgroundColor: "#b9042c" }}>
         <Left>
-          <Button transparent onPress={handleBurgerOnPress}>
+          <Button transparent>
             <Icon name="menu" />
           </Button>
         </Left>
@@ -48,7 +45,3 @@ export default function MovieNavigationBar(props) {
     </Container>
   );
 }
-
-const handleBurgerOnPress = () => {
-  props.navigation.dispatch(DrawerActions.openDrawer());
-};
