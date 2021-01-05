@@ -8,6 +8,7 @@ import * as React from "react";
 import { ColorSchemeName } from "react-native";
 import MoviesScreen from "../screens/MoviesScreen";
 import MovieDetailsScreen from "../screens/MoviesScreen/MovieDetailsScreen";
+import TVShowsScreen from "../screens/TVShowsScreen/TVShowsScreen";
 
 import NotFoundScreen from "../screens/NotFoundScreen";
 import { RootStackParamList } from "../types";
@@ -15,6 +16,7 @@ import { ScreenRoute } from "./constants";
 import LinkingConfiguration from "./LinkingConfiguration";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { DrawerContent } from "../screens/DrawerContent";
+import WatchListScreen from "../screens/WatchListScreen";
 
 // If you are not familiar with React Navigation, we recommend going through the
 // "Fundamentals" guide: https://reactnavigation.org/docs/getting-started
@@ -54,6 +56,14 @@ function RootNavigator() {
       <Stack.Screen
         name={ScreenRoute.MOVIE_DETAILS}
         component={MovieDetailsScreen}
+      />
+      <Stack.Screen
+        name={ScreenRoute.TV_SHOWS_SCREEN}
+        component={TVShowsScreen}
+      />
+      <Stack.Screen
+        name={ScreenRoute.MY_WATCH_LIST}
+        component={WatchListScreen}
       />
     </Stack.Navigator>
   );

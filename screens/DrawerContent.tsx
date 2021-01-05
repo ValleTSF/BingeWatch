@@ -11,8 +11,16 @@ import {
   TouchableRipple,
   Switch,
 } from "react-native-paper";
+// import { useNavigation } from "@react-navigation/native";
+import { ScreenRoute } from "../navigation/constants";
 
 export function DrawerContent(props: any) {
+  // const navigation = useNavigation();
+
+  // const onPressMovies = () => {
+  //   navigation.navigate(ScreenRoute.TV_SHOWS_SCREEN);
+  // };
+
   return (
     <View style={{ flex: 1 }}>
       <DrawerContentScrollView {...props}>
@@ -51,9 +59,27 @@ export function DrawerContent(props: any) {
           </View>
 
           <Drawer.Section style={styles.drawerSection}>
-            <Drawer.Item icon="movie" label="Movies"></Drawer.Item>
-            <Drawer.Item icon="television" label="TV-shows"></Drawer.Item>
-            <Drawer.Item icon="eye" label="My Watch List"></Drawer.Item>
+            <Drawer.Item
+              onPress={() => {
+                props.navigation.navigate(ScreenRoute.ROOT);
+              }}
+              icon="movie"
+              label="Movies"
+            ></Drawer.Item>
+            <Drawer.Item
+              onPress={() => {
+                props.navigation.navigate(ScreenRoute.TV_SHOWS_SCREEN);
+              }}
+              icon="television"
+              label="TV-shows"
+            ></Drawer.Item>
+            <Drawer.Item
+              onPress={() => {
+                props.navigation.navigate(ScreenRoute.MY_WATCH_LIST);
+              }}
+              icon="eye"
+              label="My Watch List"
+            ></Drawer.Item>
           </Drawer.Section>
         </View>
       </DrawerContentScrollView>

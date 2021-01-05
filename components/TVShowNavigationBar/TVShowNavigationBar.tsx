@@ -10,14 +10,14 @@ import {
   Button,
   Left,
 } from "native-base";
-import PopularMoviesScreen from "./PopularMoviesScreen";
+import PopularTVShowsScreen from "./PopularTVShowsScreen";
 import * as S from "./styled";
 
-export default function MovieNavigationBar() {
+export default function TVShowNavigationBar() {
   return (
     <Container>
       <Header style={{ backgroundColor: "#b9042c" }}>
-        <S.Header>Movies</S.Header>
+        <S.Header>TV-Shows</S.Header>
       </Header>
       <Tabs>
         <Tab
@@ -27,7 +27,7 @@ export default function MovieNavigationBar() {
             </TabHeading>
           }
         >
-          <PopularMoviesScreen />
+          <PopularTVShowsScreen />
         </Tab>
         <Tab
           heading={
