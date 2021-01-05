@@ -1,5 +1,4 @@
 import React from "react";
-import { View } from "react-native";
 import {
   Container,
   Header,
@@ -8,16 +7,21 @@ import {
   TabHeading,
   Icon,
   Text,
-  Right,
   Button,
+  Left,
 } from "native-base";
 import PopularMoviesScreen from "./PopularMoviesScreen";
 import * as S from "./styled";
 
-export default function MovieNavigationBar() {
+export default function MovieNavigationBar(props) {
   return (
     <Container>
       <Header style={{ backgroundColor: "#b9042c" }}>
+        <Left>
+          <Button transparent>
+            <Icon name="menu" />
+          </Button>
+        </Left>
         <S.Header>Movies</S.Header>
       </Header>
       <Tabs>
