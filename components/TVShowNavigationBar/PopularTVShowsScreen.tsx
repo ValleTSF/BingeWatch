@@ -40,11 +40,11 @@ export default function PopularTVShowsScreen() {
         keyExtractor={(show) => show.id.toString()}
         data={data.results}
         renderItem={({ item }) => {
-          //   const onPressMovie = () => {
-          //     navigation.navigate(ScreenRoute.MOVIE_DETAILS, { movie: item });
-          //   };
+          const onPressShow = () => {
+            navigation.navigate(ScreenRoute.TV_SHOW_DETAILS, { show: item });
+          };
           return (
-            <TouchableOpacity>
+            <TouchableOpacity onPress={onPressShow}>
               <Card
                 style={{
                   backgroundColor: "#18181b",
