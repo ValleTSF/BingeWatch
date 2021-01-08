@@ -40,14 +40,6 @@ const TVShowDetailsScreen: React.FC<Props> = (props) => {
     );
   }
 
-  //   const getTVShowSeasonDetailsData = async (seasonNumber: number) => {
-  //     const { data: seasonDetails } = await getTVShowSeasonDetails(
-  //       data.id,
-  //       seasonNumber
-  //     );
-  //     setSeasonDetails(seasonDetails);
-  //   };
-
   const renderGenres = () => {
     return data.genres.map((o) => {
       return <S.GenreText style={{ color: "white" }}>{o.name}</S.GenreText>;
@@ -56,7 +48,6 @@ const TVShowDetailsScreen: React.FC<Props> = (props) => {
 
   const renderSeasonTabs = () => {
     return data.seasons.map((s) => {
-      //   getTVShowSeasonDetailsData(s.season_number);
       return (
         <Tab
           key={s.season_number}
