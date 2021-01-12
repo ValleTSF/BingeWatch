@@ -61,7 +61,7 @@ export function DrawerContent(props: any) {
           <Drawer.Section style={styles.drawerSection}>
             <Drawer.Item
               onPress={() => {
-                props.navigation.navigate(ScreenRoute.ROOT);
+                props.navigation.navigate(ScreenRoute.MOVIES_SCREEN);
               }}
               icon="movie"
               label="Movies"

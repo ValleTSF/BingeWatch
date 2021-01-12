@@ -20,7 +20,6 @@ type Props = {
 
 const TVShowDetailsScreen: React.FC<Props> = (props) => {
   const [data, setData] = useState<TVShowDetails>();
-  const [seasonDetails, setSeasonDetails] = useState<TVShowSeasonDetails>();
   const { show } = props.route.params;
 
   useEffect(() => {

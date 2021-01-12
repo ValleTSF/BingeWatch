@@ -18,6 +18,7 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import { DrawerContent } from "../screens/DrawerContent";
 import WatchListScreen from "../screens/WatchListScreen";
 import TVShowDetailsScreen from "../screens/TVShowsScreen/TVShowDetailsScreen";
+import LoginScreen from "../screens/LoginScreen";
 
 // If you are not familiar with React Navigation, we recommend going through the
 // "Fundamentals" guide: https://reactnavigation.org/docs/getting-started
@@ -48,7 +49,7 @@ const Stack = createStackNavigator<RootStackParamList>();
 function RootNavigator() {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name={ScreenRoute.ROOT} component={MoviesScreen} />
+      <Stack.Screen name={ScreenRoute.LOGIN} component={LoginScreen} />
       <Stack.Screen
         name="NotFound"
         component={NotFoundScreen}
@@ -70,6 +71,7 @@ function RootNavigator() {
         name={ScreenRoute.TV_SHOW_DETAILS}
         component={TVShowDetailsScreen}
       />
+      <Stack.Screen name={ScreenRoute.MOVIES_SCREEN} component={MoviesScreen} />
     </Stack.Navigator>
   );
 }
