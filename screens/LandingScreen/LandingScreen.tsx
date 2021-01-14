@@ -1,18 +1,20 @@
-import React from "react";
-import { View, Text, Image, Dimensions, Button } from "react-native";
+import React, { useState } from "react";
+import { View, Text, Image, Dimensions, Modal } from "react-native";
 import { Video } from "expo-av";
 import * as S from "./styled";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { useNavigation } from "@react-navigation/native";
+import { ScreenRoute } from "../../navigation/constants";
 
-export default function LoginScreen() {
+export default function LandingScreen() {
   const { height } = Dimensions.get("screen");
+  const navigation = useNavigation();
 
   const handleSignIn = () => {
-    console.log("Sign in!");
+    navigation.navigate(ScreenRoute.LOGIN_SCREEN);
   };
 
   const handleSignUp = () => {
-    console.log("Sign up!");
+    navigation.navigate(ScreenRoute.SIGNUP_SCREEN);
   };
 
   return (
@@ -50,10 +52,10 @@ export default function LoginScreen() {
       <View
         style={{ flex: 0.5, justifyContent: "center", alignItems: "center" }}
       >
-        <S.LogInButton>
+        <S.LogInButton onPress={handleSignIn}>
           <S.ButtonText>Log In</S.ButtonText>
         </S.LogInButton>
-        <S.SignUpButton>
+        <S.SignUpButton onPress={handleSignUp}>
           <S.ButtonText>Sign up</S.ButtonText>
         </S.SignUpButton>
       </View>

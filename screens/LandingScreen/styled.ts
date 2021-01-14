@@ -3,7 +3,6 @@ import styled from "styled-components/native";
 export const Title = styled.Text`
   font-size: 40px;
   color: red;
-  font-family: "carbon bl";
 `;
 
 export const LogInButton = styled.TouchableOpacity`

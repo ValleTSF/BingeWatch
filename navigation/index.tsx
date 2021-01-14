@@ -18,7 +18,9 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import { DrawerContent } from "../screens/DrawerContent";
 import WatchListScreen from "../screens/WatchListScreen";
 import TVShowDetailsScreen from "../screens/TVShowsScreen/TVShowDetailsScreen";
-import LoginScreen from "../screens/LoginScreen";
+import LandingScreen from "../screens/LandingScreen/LandingScreen";
+import LoginScreen from "../screens/LandingScreen/LoginScreen";
+import SignUpScreen from "../screens/LandingScreen/SignUpScreen";
 
 // If you are not familiar with React Navigation, we recommend going through the
 // "Fundamentals" guide: https://reactnavigation.org/docs/getting-started
@@ -49,7 +51,10 @@ const Stack = createStackNavigator<RootStackParamList>();
 function RootNavigator() {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name={ScreenRoute.LOGIN} component={LoginScreen} />
+      <Stack.Screen
+        name={ScreenRoute.LANDING_SCREEN}
+        component={LandingScreen}
+      />
       <Stack.Screen
         name="NotFound"
         component={NotFoundScreen}
@@ -72,6 +77,8 @@ function RootNavigator() {
         component={TVShowDetailsScreen}
       />
       <Stack.Screen name={ScreenRoute.MOVIES_SCREEN} component={MoviesScreen} />
+      <Stack.Screen name={ScreenRoute.LOGIN_SCREEN} component={LoginScreen} />
+      <Stack.Screen name={ScreenRoute.SIGNUP_SCREEN} component={SignUpScreen} />
     </Stack.Navigator>
   );
 }

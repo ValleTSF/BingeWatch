@@ -7,7 +7,9 @@ export type RootStackParamList = {
   [ScreenRoute.TV_SHOWS_SCREEN]: undefined;
   [ScreenRoute.MY_WATCH_LIST]: undefined;
   [ScreenRoute.TV_SHOW_DETAILS]: { show: TVShowResult };
-  [ScreenRoute.LOGIN]: undefined;
+  [ScreenRoute.LANDING_SCREEN]: undefined;
+  [ScreenRoute.SIGNUP_SCREEN]: undefined;
+  [ScreenRoute.LOGIN_SCREEN]: undefined;
   NotFound: undefined;
   Movies: undefined;
 };
