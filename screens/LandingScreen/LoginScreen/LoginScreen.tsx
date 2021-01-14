@@ -1,10 +1,13 @@
 import { Video } from "expo-av";
-import React, { useRef } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { View, Text, Image, Dimensions, TextInput } from "react-native";
 import { useForm, Controller } from "react-hook-form";
 import * as S from "../styled";
-import { color } from "react-native-reanimated";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import "firebase/auth";
+import { auth } from "firebase";
+import { useNavigation } from "@react-navigation/native";
+import { ScreenRoute } from "../../../navigation/constants";
 
 type FormData = {
   email: string;
@@ -12,16 +15,52 @@ type FormData = {
 };
 
 export default function LoginScreen() {
+  const [initializing, setInitializing] = useState(true);
+  const [user, setUser] = useState();
+
   const { height } = Dimensions.get("screen");
   const { control, handleSubmit, errors } = useForm<FormData>();
-  // const emailInputRef = useRef();
-  // const passwordInputRef = useRef();
 
-  const onSubmit = (data: any) => {
+  const navigation = useNavigation();
+
+  useEffect(() => {
+    const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
+    return subscriber;
+  }, []);
+
+  function onAuthStateChanged(user: any) {
+    setUser(user);
+    if (initializing) {
+      setInitializing(false);
+    }
+  }
+
+  const onSubmit = (data: FormData) => {
     console.log("Submit!", data);
+    const { email, password } = data;
+    auth()
+      .signInWithEmailAndPassword(email, password)
+      .then(() => {
+        console.log("User account created & signed in!");
+        navigation.navigate(ScreenRoute.MOVIES_SCREEN);
+      })
+      .catch((error) => {
+        if (error.code === "auth/email-already-in-use") {
+          console.log("That email address is already in use!");
+        }
+
+        if (error.code === "auth/invalid-email") {
+          console.log("That email address is invalid!");
+        }
+
+        console.error(error);
+      });
   };
 
   console.log("errors", errors);
+
+  console.log("user", user);
+
   return (
     <View style={{ flex: 1, justifyContent: "center" }}>
       <Video
@@ -68,10 +107,6 @@ export default function LoginScreen() {
             name="email"
             control={control}
             rules={{ required: "Email is required." }}
-            // ref={emailInputRef}
-            // onFocus={() => {
-            //   console.log(emailInputRef.current.focus());
-            // }}
             render={(props) => (
               <TextInput
                 {...props}
@@ -94,10 +129,6 @@ export default function LoginScreen() {
             name="password"
             control={control}
             rules={{ required: "Password is required." }}
-            // ref={passwordInputRef}
-            // onFocus={() => {
-            //   console.log(passwordInputRef.current.focus());
-            // }}
             render={(props) => (
               <TextInput
                 {...props}
