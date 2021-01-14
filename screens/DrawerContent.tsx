@@ -11,15 +11,9 @@ import {
   TouchableRipple,
   Switch,
 } from "react-native-paper";
-// import { useNavigation } from "@react-navigation/native";
 import { ScreenRoute } from "../navigation/constants";
 
 export function DrawerContent(props: any) {
-  // const navigation = useNavigation();
-
-  // const onPressMovies = () => {
-  //   navigation.navigate(ScreenRoute.TV_SHOWS_SCREEN);
-  // };
 
   return (
     <View style={{ flex: 1 }}>
