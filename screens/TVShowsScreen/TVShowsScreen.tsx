@@ -1,9 +1,9 @@
 import { StatusBar } from "expo-status-bar";
 import * as React from "react";
-import { Dimensions, StyleSheet } from "react-native";
+import { Dimensions } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import TVShowNavigationBar from "../../components/TVShowNavigationBar/TVShowNavigationBar";
-import { Text, View } from "../../components/Themed";
+import "firebase/auth";
 
 export default function TVShowsScreen() {
   return (

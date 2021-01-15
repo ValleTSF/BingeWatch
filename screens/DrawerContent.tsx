@@ -1,19 +1,32 @@
 import * as React from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, Text } from "react-native";
 import { DrawerContentScrollView, DrawerItem } from "@react-navigation/drawer";
-import {
-  Avatar,
-  Title,
-  Caption,
-  Paragraph,
-  Drawer,
-  Text,
-  TouchableRipple,
-  Switch,
-} from "react-native-paper";
+import { Avatar, Title, Caption, Paragraph, Drawer } from "react-native-paper";
 import { ScreenRoute } from "../navigation/constants";
+import { auth } from "firebase";
 
 export function DrawerContent(props: any) {
+  const user: firebase.User = auth().currentUser;
+
+  const handleSignOut = () => {
+    auth()
+      .signOut()
+      .then(() => {
+        console.log("Succesfully logged out!");
+        props.navigation.navigate(ScreenRoute.LANDING_SCREEN);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  if (!user) {
+    return (
+      <View>
+        <Text>Sign in</Text>
+      </View>
+    );
+  }
 
   return (
     <View style={{ flex: 1 }}>
@@ -29,8 +42,7 @@ export function DrawerContent(props: any) {
                 size={50}
               />
               <View style={{ marginLeft: 15, flexDirection: "column" }}>
-                <Title style={styles.title}>Ben Affleck</Title>
-                <Caption style={styles.caption}>@BenAffleckWasTaken</Caption>
+                <Title style={styles.title}>{user.email}</Title>
               </View>
             </View>
             <View style={{ marginTop: 15 }}>
@@ -78,7 +90,11 @@ export function DrawerContent(props: any) {
         </View>
       </DrawerContentScrollView>
       <Drawer.Section style={styles.bottomDrawerSection}>
-        <Drawer.Item icon="logout" label="Sign Out"></Drawer.Item>
+        <Drawer.Item
+          onPress={handleSignOut}
+          icon="logout"
+          label="Sign Out"
+        ></Drawer.Item>
       </Drawer.Section>
     </View>
   );
