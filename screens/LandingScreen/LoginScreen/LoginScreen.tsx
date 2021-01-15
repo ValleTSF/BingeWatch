@@ -41,7 +41,6 @@ export default function LoginScreen() {
     auth()
       .signInWithEmailAndPassword(email, password)
       .then(() => {
-        console.log("User account created & signed in!");
         navigation.navigate(ScreenRoute.MOVIES_SCREEN);
       })
       .catch((error) => {
@@ -56,10 +55,6 @@ export default function LoginScreen() {
         console.error(error);
       });
   };
-
-  console.log("errors", errors);
-
-  console.log("user", user);
 
   return (
     <View style={{ flex: 1, justifyContent: "center" }}>

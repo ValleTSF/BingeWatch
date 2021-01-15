@@ -1,18 +1,33 @@
 import * as React from "react";
 import { View, StyleSheet, Text } from "react-native";
-import { DrawerContentScrollView, DrawerItem } from "@react-navigation/drawer";
+import { DrawerContentScrollView } from "@react-navigation/drawer";
 import { Avatar, Title, Caption, Paragraph, Drawer } from "react-native-paper";
 import { ScreenRoute } from "../navigation/constants";
-import { auth } from "firebase";
+import { auth, firestore } from "firebase";
+import "firebase/firestore";
 
 export function DrawerContent(props: any) {
   const user: firebase.User = auth().currentUser;
+  const watchlistRef = firestore().collection("Watchlist");
+  const usersRef = firestore().collection("Users");
+
+  const testDrive = async () => {
+    usersRef.doc("valletsf@gmail.com").set({
+      id: "valletsf@gmail.com",
+      watchlist: "AGYe15pITDoRJIOPn6V8",
+    });
+    const watchlistDocument = await watchlistRef
+      .doc("AGYe15pITDoRJIOPn6V8")
+      .get();
+    console.log(watchlistDocument.data());
+  };
+
+  testDrive();
 
   const handleSignOut = () => {
     auth()
       .signOut()
       .then(() => {
-        console.log("Succesfully logged out!");
         props.navigation.navigate(ScreenRoute.LANDING_SCREEN);
       })
       .catch((error) => {
