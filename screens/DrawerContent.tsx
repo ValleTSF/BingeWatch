@@ -8,21 +8,6 @@ import "firebase/firestore";
 
 export function DrawerContent(props: any) {
   const user: firebase.User = auth().currentUser;
-  const watchlistRef = firestore().collection("Watchlist");
-  const usersRef = firestore().collection("Users");
-
-  const testDrive = async () => {
-    usersRef.doc("valletsf@gmail.com").set({
-      id: "valletsf@gmail.com",
-      watchlist: "AGYe15pITDoRJIOPn6V8",
-    });
-    const watchlistDocument = await watchlistRef
-      .doc("AGYe15pITDoRJIOPn6V8")
-      .get();
-    console.log(watchlistDocument.data());
-  };
-
-  testDrive();
 
   const handleSignOut = () => {
     auth()
