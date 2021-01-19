@@ -1,14 +1,11 @@
 import { RouteProp } from "@react-navigation/native";
+import { auth, firestore } from "firebase";
 import { Tab, TabHeading, Tabs, Text, View } from "native-base";
 import React, { useEffect, useState } from "react";
 import { Dimensions, Image } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
-import { color } from "react-native-reanimated";
-import {
-  getTVShowDetails,
-  getTVShowSeasonDetails,
-} from "../../../api/movieApi";
-import { Season, TVShowDetails, TVShowSeasonDetails } from "../../../api/types";
+import { getTVShowDetails } from "../../../api/movieApi";
+import { TVShowDetails } from "../../../api/types";
 import { ScreenRoute } from "../../../navigation/constants";
 import { RootStackParamList } from "../../../types";
 import * as S from "./styled";
@@ -19,6 +16,9 @@ type Props = {
 };
 
 const TVShowDetailsScreen: React.FC<Props> = (props) => {
+  const user: firebase.User = auth().currentUser;
+  const watchlistRef = firestore().collection("Watchlist");
+  const { email } = user;
   const [data, setData] = useState<TVShowDetails>();
   const { show } = props.route.params;
 
@@ -41,9 +41,32 @@ const TVShowDetailsScreen: React.FC<Props> = (props) => {
 
   const renderGenres = () => {
     return data.genres.map((o) => {
-      return <S.GenreText style={{ color: "white" }}>{o.name}</S.GenreText>;
+      return (
+        <S.GenreText style={{ color: "white", top: 10 }}>{o.name}</S.GenreText>
+      );
     });
   };
+
+  async function handleAddToWatchList() {
+    const watchListSnapshot = await watchlistRef
+      .where("userId", "==", email)
+      .get();
+    const watchlistId = watchListSnapshot.docs[0].id;
+    const documentRef = watchlistRef.doc(watchlistId);
+
+    documentRef.set(
+      {
+        tvShows: {
+          [data.name]: {
+            title: data.name,
+            overview: show.overview,
+            backdrop: "http://image.tmdb.org/t/p/w500" + data.backdrop_path,
+          },
+        },
+      },
+      { merge: true }
+    );
+  }
 
   const renderSeasonTabs = () => {
     return data.seasons.map((s) => {
@@ -83,6 +106,9 @@ const TVShowDetailsScreen: React.FC<Props> = (props) => {
             uri: "http://image.tmdb.org/t/p/w500" + data.backdrop_path,
           }}
         />
+        <S.AddToWatchListButton onPress={handleAddToWatchList}>
+          <S.ButtonText>+</S.ButtonText>
+        </S.AddToWatchListButton>
         <Text
           style={{
             color: "white",
@@ -132,7 +158,7 @@ const TVShowDetailsScreen: React.FC<Props> = (props) => {
           {data.vote_average}
         </Text>
         <S.Header>Seasons</S.Header>
-        <Tabs style={{ marginTop: 20 }}>{renderSeasonTabs()}</Tabs>
+        <Tabs style={{ marginTop: 15 }}>{renderSeasonTabs()}</Tabs>
       </ScrollView>
     </View>
   );

@@ -7,10 +7,28 @@ export const Container = styled.View`
   justify-content: center;
 `;
 
+export const ButtonText = styled.Text`
+  font-size: 32px;
+  font-weight: bold;
+`;
+
+export const AddToWatchListButton = styled.TouchableOpacity`
+  top: 230;
+  left: 330;
+  position: absolute;
+  width: 17%;
+  background-color: #fb5b5a;
+  border-radius: 64;
+  height: 70;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+`;
+
 export const Header = styled.Text`
   font-size: 26;
   font-weight: bold;
-  margin-top: 20;
+  margin-top: 20px;
   color: #d1d1d1;
   margin-left: 10;
 `;

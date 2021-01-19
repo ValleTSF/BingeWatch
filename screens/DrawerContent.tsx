@@ -1,7 +1,7 @@
 import * as React from "react";
 import { View, StyleSheet, Text } from "react-native";
 import { DrawerContentScrollView } from "@react-navigation/drawer";
-import { Avatar, Title, Caption, Paragraph, Drawer } from "react-native-paper";
+import { Title, Caption, Paragraph, Drawer } from "react-native-paper";
 import { ScreenRoute } from "../navigation/constants";
 import { auth, firestore } from "firebase";
 import "firebase/firestore";
