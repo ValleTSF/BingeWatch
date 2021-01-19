@@ -21,11 +21,7 @@ export function DrawerContent(props: any) {
   };
 
   if (!user) {
-    return (
-      <View>
-        <Text>Sign in</Text>
-      </View>
-    );
+    return <View></View>;
   }
 
   return (
@@ -34,16 +30,9 @@ export function DrawerContent(props: any) {
         <View style={styles.drawerContent}>
           <View style={styles.userInfoSection}>
             <View style={{ flexDirection: "row", marginTop: 15 }}>
-              <Avatar.Image
-                source={{
-                  uri:
-                    "https://pbs.twimg.com/profile_images/732604136085200896/Ip4YzXfT.jpg",
-                }}
-                size={50}
-              />
-              <View style={{ marginLeft: 15, flexDirection: "column" }}>
-                <Title style={styles.title}>{user.email}</Title>
-              </View>
+              <Title style={styles.title}>{user.email}</Title>
+
+              <View style={{ marginLeft: 15, flexDirection: "column" }}></View>
             </View>
             <View style={{ marginTop: 15 }}>
               <Title style={styles.title}>Watch List</Title>

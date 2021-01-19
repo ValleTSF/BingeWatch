@@ -2,16 +2,45 @@ import { RouteProp } from "@react-navigation/native";
 import { Text, View } from "native-base";
 import React from "react";
 import { Dimensions, Image } from "react-native";
-import { ScrollView } from "react-native-gesture-handler";
+import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
 import { ScreenRoute } from "../../../navigation/constants";
 import { RootStackParamList } from "../../../types";
+import "firebase/firestore";
+import * as S from "./styled";
+import { auth, firestore } from "firebase";
 
 type Props = {
   route: RouteProp<RootStackParamList, ScreenRoute.MOVIE_DETAILS>;
 };
 
 const MovieDetailsScreen: React.FC<Props> = (props) => {
+  const user: firebase.User = auth().currentUser;
+  const watchlistRef = firestore().collection("Watchlist");
+  const { email } = user;
   const { movie } = props.route.params;
+
+  async function handleAddToWatchList() {
+    const watchListSnapshot = await watchlistRef
+      .where("userId", "==", email)
+      .get();
+    const watchlistId = watchListSnapshot.docs[0].id;
+    const documentRef = watchlistRef.doc(watchlistId);
+
+    documentRef.set(
+      {
+        movies: {
+          [movie.title]: {
+            title: movie.title,
+            overview: movie.overview,
+            backdrop: "http://image.tmdb.org/t/p/w500" + movie.backdrop_path,
+            release: movie.release_date,
+          },
+        },
+      },
+      { merge: true }
+    );
+  }
+
   return (
     <View
       style={{
@@ -81,6 +110,9 @@ const MovieDetailsScreen: React.FC<Props> = (props) => {
           {movie.release_date}
         </Text>
       </ScrollView>
+      <S.AddToWatchListButton onPress={handleAddToWatchList}>
+        <S.ButtonText>Add to Watchlist</S.ButtonText>
+      </S.AddToWatchListButton>
     </View>
   );
 };
