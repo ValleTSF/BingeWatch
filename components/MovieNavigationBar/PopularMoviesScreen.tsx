@@ -50,12 +50,11 @@ export default function PopularMoviesScreen() {
                 style={{
                   backgroundColor: "#18181b",
                   marginBottom: 50,
-                  marginRight: 10,
-                  marginLeft: 10,
+                  marginRight: 5,
+                  marginLeft: 5,
                 }}
                 transparent
               >
-                <S.MovieTitle>{item.title}</S.MovieTitle>
                 <Image
                   style={{ height: 278, width: 185 }}
                   source={{

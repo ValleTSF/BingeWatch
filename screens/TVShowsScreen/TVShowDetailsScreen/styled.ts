@@ -14,7 +14,7 @@ export const ButtonText = styled.Text`
 
 export const AddToWatchListButton = styled.TouchableOpacity`
   top: 230;
-  left: 330;
+  left: 320;
   position: absolute;
   width: 17%;
   background-color: #fb5b5a;
@@ -23,6 +23,7 @@ export const AddToWatchListButton = styled.TouchableOpacity`
   align-items: center;
   justify-content: center;
   margin-top: 20px;
+  z-index: 1;
 `;
 
 export const Header = styled.Text`

@@ -61,6 +61,9 @@ const MovieDetailsScreen: React.FC<Props> = (props) => {
             uri: "http://image.tmdb.org/t/p/w500" + movie.backdrop_path,
           }}
         />
+        <S.AddToWatchListButton onPress={handleAddToWatchList}>
+          <S.ButtonText>+</S.ButtonText>
+        </S.AddToWatchListButton>
         <Text
           style={{
             color: "white",
@@ -109,9 +112,6 @@ const MovieDetailsScreen: React.FC<Props> = (props) => {
           {movie.release_date}
         </Text>
       </ScrollView>
-      <S.AddToWatchListButton onPress={handleAddToWatchList}>
-        <S.ButtonText>Add to Watchlist</S.ButtonText>
-      </S.AddToWatchListButton>
     </View>
   );
 };
