@@ -8,23 +8,23 @@ export const Title = styled.Text`
 export const LogInButton = styled.TouchableOpacity`
   width: 80%;
   background-color: #fb5b5a;
-  border-radius: 25;
-  height: 50;
+  border-radius: 25px;
+  height: 50px;
   align-items: center;
   justify-content: center;
   margin-top: 40px;
-  margin-bottom: 10;
+  margin-bottom: 10px;
 `;
 
 export const SignUpButton = styled.TouchableOpacity`
   width: 80%;
   background-color: #fff;
-  border-radius: 25;
-  height: 50;
+  border-radius: 25px;
+  height: 50px;
   align-items: center;
   justify-content: center;
   margin-top: 5px;
-  margin-bottom: 10;
+  margin-bottom: 10px;
 `;
 
 export const ButtonText = styled.Text`

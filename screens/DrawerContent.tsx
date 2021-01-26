@@ -73,7 +73,7 @@ export function DrawerContent(props: any) {
                 props.navigation.navigate(ScreenRoute.MY_WATCH_LIST);
               }}
               icon="eye"
-              label="My Watch List"
+              label="My Watchlist"
             ></Drawer.Item>
           </Drawer.Section>
         </View>

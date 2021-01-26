@@ -22,6 +22,17 @@ export type MovieResult = {
   vote_count: number;
 };
 
+export type FirebaseMovieList = {
+  FirebaseMovies: FirebaseMovie[];
+};
+
+export type FirebaseMovie = {
+  backdrop: string;
+  overview: string;
+  release: string;
+  title: string;
+};
+
 export enum OriginalLanguage {
   De = "de",
   En = "en",

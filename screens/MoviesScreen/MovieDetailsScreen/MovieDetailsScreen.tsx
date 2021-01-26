@@ -25,7 +25,6 @@ const MovieDetailsScreen: React.FC<Props> = (props) => {
       .get();
     const watchlistId = watchListSnapshot.docs[0].id;
     const documentRef = watchlistRef.doc(watchlistId);
-
     documentRef.set(
       {
         movies: {

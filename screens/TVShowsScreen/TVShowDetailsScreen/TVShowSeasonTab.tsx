@@ -20,9 +20,11 @@ export default function TVShowSeasonTab(props: any) {
   const renderEpisodes = () => {
     return data.episodes.map((e) => {
       return (
-        <View style={{ marginTop: 10, flexDirection: "row" }}>
+        <View
+          key={e.episode_number}
+          style={{ marginTop: 10, flexDirection: "row" }}
+        >
           <Image
-            key={e.episode_number}
             style={{ height: 113, width: 150 }}
             source={{
               uri: "http://image.tmdb.org/t/p/w200" + e.still_path,

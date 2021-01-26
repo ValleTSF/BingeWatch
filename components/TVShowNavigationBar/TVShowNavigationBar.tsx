@@ -1,15 +1,5 @@
 import React from "react";
-import {
-  Container,
-  Header,
-  Tab,
-  Tabs,
-  TabHeading,
-  Icon,
-  Text,
-  Button,
-  Left,
-} from "native-base";
+import { Container, Header, Tab, Tabs, TabHeading, Text } from "native-base";
 import PopularTVShowsScreen from "./PopularTVShowsScreen";
 import * as S from "./styled";
 

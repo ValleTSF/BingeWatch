@@ -42,14 +42,14 @@ export default function LoginScreen() {
     let documentId;
     await watchlistRef
       .add({
-        userId: email,
+        userId: email.toLowerCase(),
       })
       .then((doc) => {
         console.log(doc.id);
         documentId = doc.id;
       });
-    await usersRef.doc(email).set({
-      id: email,
+    await usersRef.doc(email.toLowerCase()).set({
+      id: email.toLowerCase(),
       watchlist: documentId,
     });
   };

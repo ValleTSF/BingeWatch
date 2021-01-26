@@ -42,7 +42,9 @@ const TVShowDetailsScreen: React.FC<Props> = (props) => {
   const renderGenres = () => {
     return data.genres.map((o) => {
       return (
-        <S.GenreText style={{ color: "white", top: 10 }}>{o.name}</S.GenreText>
+        <S.GenreText key={o.id} style={{ color: "white", top: 10 }}>
+          {o.name}
+        </S.GenreText>
       );
     });
   };

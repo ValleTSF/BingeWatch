@@ -1,19 +1,9 @@
 import React from "react";
-import {
-  Container,
-  Header,
-  Tab,
-  Tabs,
-  TabHeading,
-  Icon,
-  Text,
-  Button,
-  Left,
-} from "native-base";
+import { Container, Header, Tab, Tabs, TabHeading, Text } from "native-base";
 import PopularMoviesScreen from "./PopularMoviesScreen";
 import * as S from "./styled";
 
-export default function MovieNavigationBar(props) {
+export default function MovieNavigationBar() {
   return (
     <Container>
       <Header style={{ backgroundColor: "#b9042c" }}>
