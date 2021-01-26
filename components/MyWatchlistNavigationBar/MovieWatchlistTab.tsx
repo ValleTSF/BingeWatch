@@ -74,7 +74,11 @@ export default function MovieWatchlistTab(props: any) {
         },
       ];
       return (
-        <Swipeout right={swipeButtons} backgroundColor={"#18181b"}>
+        <Swipeout
+          autoClose={true}
+          right={swipeButtons}
+          backgroundColor={"#18181b"}
+        >
           <View key={m.title} style={{ marginTop: 10, flexDirection: "row" }}>
             <Image
               style={{ height: 113, width: 150 }}
