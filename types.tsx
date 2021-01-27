@@ -10,6 +10,8 @@ export type RootStackParamList = {
   [ScreenRoute.LANDING_SCREEN]: undefined;
   [ScreenRoute.SIGNUP_SCREEN]: undefined;
   [ScreenRoute.LOGIN_SCREEN]: undefined;
+  [ScreenRoute.MOVIE_SEARCH_SCREEN]: undefined;
+  [ScreenRoute.TV_SHOW_SEARCH_SCREEN]: undefined;
   NotFound: undefined;
   Movies: undefined;
 };

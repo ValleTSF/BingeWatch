@@ -39,3 +39,19 @@ export const getTVShowSeasonDetails = (showId: any, seasonNumber: any) => {
       "?api_key=fe33c49063178a9259f21b178b1a7cda&language=en-US"
   );
 };
+
+export const getMovieSearch = (searchInput: any) => {
+  return api.get<PopularMovieResult>(
+    "https://api.themoviedb.org/3/search/movie?api_key=fe33c49063178a9259f21b178b1a7cda&language=en-US&query=" +
+      searchInput +
+      "&page=1&include_adult=false"
+  );
+};
+
+export const getTvShowSearch = (searchInput: any) => {
+  return api.get<PopularTVShowResult>(
+    "https://api.themoviedb.org/3/search/tv?api_key=fe33c49063178a9259f21b178b1a7cda&language=en-US&page=1&query=" +
+      searchInput +
+      "&page=1&include_adult=false"
+  );
+};

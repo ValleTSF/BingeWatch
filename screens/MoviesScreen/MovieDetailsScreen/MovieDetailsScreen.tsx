@@ -8,6 +8,7 @@ import { RootStackParamList } from "../../../types";
 import "firebase/firestore";
 import * as S from "./styled";
 import { auth, firestore } from "firebase";
+import { StatusBar } from "expo-status-bar";
 
 type Props = {
   route: RouteProp<RootStackParamList, ScreenRoute.MOVIE_DETAILS>;
