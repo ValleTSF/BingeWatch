@@ -9,4 +9,6 @@ export enum ScreenRoute {
   SIGNUP_SCREEN = "Screen/SignUp",
   MOVIE_SEARCH_SCREEN = "Screen/MovieSearchScreen",
   TV_SHOW_SEARCH_SCREEN = "Screen/TvShowSearchScreen",
+  SELECTED_GENRE_TV_SHOW_SCREEN = "Screen/SelectedGenreTvShowScreen",
+  SELECTED_GENRE_MOVIE_SCREEN = "Screen/SelectedGenreMovieScreen",
 }

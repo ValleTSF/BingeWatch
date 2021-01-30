@@ -20,3 +20,10 @@ export const MovieTitle = styled.Text`
   text-align: center;
   margin-bottom: 7;
 `;
+
+export const GenreText = styled.Text`
+  font-size: 24;
+  font-weight: bold;
+  margin-top: 2%;
+  color: #d1d1d1;
+`;

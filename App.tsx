@@ -1,6 +1,7 @@
 // @refresh reset
 import { StatusBar } from "expo-status-bar";
 import React from "react";
+import { View } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
 import useCachedResources from "./hooks/useCachedResources";
@@ -20,7 +21,6 @@ const firebaseConfig = {
   appId: "1:247936588447:web:bd5f580d51abdd0ecbe0aa",
   measurementId: "G-H8KT90PE6D",
 };
-console.log("initializing Firebase");
 
 if (firebase.apps.length === 0) {
   firebase.initializeApp(firebaseConfig);
@@ -36,7 +36,6 @@ export default function App() {
     return (
       <SafeAreaProvider>
         <Navigation colorScheme={colorScheme} />
-        <StatusBar translucent backgroundColor="transparent" />
       </SafeAreaProvider>
     );
   }

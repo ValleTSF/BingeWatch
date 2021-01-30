@@ -5,6 +5,7 @@ export const Container = styled.View`
   background-color: #18181b;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 `;
 
 export const Header = styled.Text`

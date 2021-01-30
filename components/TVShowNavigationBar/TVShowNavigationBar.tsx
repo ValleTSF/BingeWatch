@@ -6,6 +6,7 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import { Feather } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import { ScreenRoute } from "../../navigation/constants";
+import TvShowGenreScreen from "./TvShowGenreScreen";
 
 export default function TVShowNavigationBar() {
   const navigation = useNavigation();
@@ -39,7 +40,9 @@ export default function TVShowNavigationBar() {
               <Text>Genre</Text>
             </TabHeading>
           }
-        ></Tab>
+        >
+          <TvShowGenreScreen />
+        </Tab>
       </Tabs>
     </Container>
   );

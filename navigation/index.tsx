@@ -23,6 +23,8 @@ import LoginScreen from "../screens/LandingScreen/LoginScreen";
 import SignUpScreen from "../screens/LandingScreen/SignUpScreen";
 import MovieSearchScreen from "../components/MovieNavigationBar/MovieSearchScreen";
 import TvShowSearchScreen from "../components/TVShowNavigationBar/TvShowSearchScreen";
+import TvShowSelectedGenreScreen from "../components/TVShowNavigationBar/TvShowSelectedGenreScreen";
+import MovieSelectedGenreScreen from "../components/MovieNavigationBar/MovieSelectedGenreScreen";
 
 // If you are not familiar with React Navigation, we recommend going through the
 // "Fundamentals" guide: https://reactnavigation.org/docs/getting-started
@@ -85,6 +87,14 @@ function RootNavigator() {
       <Stack.Screen
         name={ScreenRoute.TV_SHOW_SEARCH_SCREEN}
         component={TvShowSearchScreen}
+      />
+      <Stack.Screen
+        name={ScreenRoute.SELECTED_GENRE_TV_SHOW_SCREEN}
+        component={TvShowSelectedGenreScreen}
+      />
+      <Stack.Screen
+        name={ScreenRoute.SELECTED_GENRE_MOVIE_SCREEN}
+        component={MovieSelectedGenreScreen}
       />
       <Stack.Screen name={ScreenRoute.MOVIES_SCREEN} component={MoviesScreen} />
       <Stack.Screen name={ScreenRoute.LOGIN_SCREEN} component={LoginScreen} />

@@ -6,6 +6,7 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import { Feather } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import { ScreenRoute } from "../../navigation/constants";
+import MovieGenreScreen from "./MovieGenreScreen";
 
 export default function MovieNavigationBar() {
   const navigation = useNavigation();
@@ -40,7 +41,9 @@ export default function MovieNavigationBar() {
               <Text>Genre</Text>
             </TabHeading>
           }
-        ></Tab>
+        >
+          <MovieGenreScreen />
+        </Tab>
       </Tabs>
     </Container>
   );

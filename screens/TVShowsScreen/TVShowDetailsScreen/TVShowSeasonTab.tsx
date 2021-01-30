@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, Dimensions } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { getTVShowSeasonDetails } from "../../../api/movieApi";
 import { TVShowSeasonDetails } from "../../../api/types";
@@ -58,14 +58,18 @@ export default function TVShowSeasonTab(props: any) {
 
   if (!data) {
     return (
-      <View style={{ backgroundColor: "black" }}>
-        <Text style={{ color: "white" }}>Loading!</Text>
-      </View>
+      <View
+        style={{
+          height: Dimensions.get("window").height,
+          width: Dimensions.get("window").width,
+          backgroundColor: "#18181b",
+        }}
+      ></View>
     );
   }
 
   return (
-    <View style={{ flex: 1, backgroundColor: "black" }}>
+    <View style={{ flex: 1, backgroundColor: "#18181b" }}>
       <ScrollView style={{ flex: 1 }}>{renderEpisodes()}</ScrollView>
     </View>
   );

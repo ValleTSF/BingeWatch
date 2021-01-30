@@ -50,6 +50,7 @@ const MovieDetailsScreen: React.FC<Props> = (props) => {
         backgroundColor: "#18181b",
       }}
     >
+      <StatusBar hidden translucent backgroundColor="transparent" />
       <ScrollView
         contentContainerStyle={{
           width: Dimensions.get("window").width,

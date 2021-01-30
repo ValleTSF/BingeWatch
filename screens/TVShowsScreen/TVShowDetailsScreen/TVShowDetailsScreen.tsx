@@ -2,9 +2,12 @@ import { RouteProp } from "@react-navigation/native";
 import { auth, firestore } from "firebase";
 import { Tab, TabHeading, Tabs, Text, View } from "native-base";
 import React, { useEffect, useState } from "react";
-import { Dimensions, Image } from "react-native";
+import { Dimensions, Image, StatusBar } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
-import { getTVShowDetails } from "../../../api/movieApi";
+import {
+  getTVShowDetails,
+  getTVShowSeasonDetails,
+} from "../../../api/movieApi";
 import { TVShowDetails } from "../../../api/types";
 import { ScreenRoute } from "../../../navigation/constants";
 import { RootStackParamList } from "../../../types";
@@ -33,9 +36,13 @@ const TVShowDetailsScreen: React.FC<Props> = (props) => {
 
   if (!data) {
     return (
-      <S.Container>
-        <Text>Loading</Text>
-      </S.Container>
+      <View
+        style={{
+          height: Dimensions.get("window").height,
+          width: Dimensions.get("window").width,
+          backgroundColor: "#18181b",
+        }}
+      ></View>
     );
   }
 
@@ -56,18 +63,54 @@ const TVShowDetailsScreen: React.FC<Props> = (props) => {
     const watchlistId = watchListSnapshot.docs[0].id;
     const documentRef = watchlistRef.doc(watchlistId);
 
-    documentRef.set(
-      {
-        tvShows: {
-          [data.name]: {
-            title: data.name,
-            overview: show.overview,
-            backdrop: "http://image.tmdb.org/t/p/w500" + data.backdrop_path,
+    data.seasons.forEach(async (s) => {
+      let season = {
+        [s.season_number]: {},
+      };
+      let episodesList: {
+        episodeNumber: number;
+        episodeName: string;
+        season: number;
+      }[] = [];
+      const { data: seasonData } = await getTVShowSeasonDetails(
+        data.id,
+        s.season_number
+      );
+      const { episodes } = seasonData;
+      const seasonEpisodes = episodes.filter(
+        (e) => e.season_number === s.season_number
+      );
+
+      seasonEpisodes.forEach((e) => {
+        const episodeObject = {
+          episodeNumber: e.episode_number,
+          episodeName: e.name,
+          season: e.season_number,
+          imdb: e.vote_average,
+          date: e.air_date,
+          overview: e.overview,
+          id: e.id,
+          stillPath: e.still_path,
+        };
+        episodesList.push(episodeObject);
+        season[s.season_number] = episodesList;
+      });
+
+      documentRef.set(
+        {
+          tvShows: {
+            [data.name]: {
+              title: data.name,
+              overview: show.overview,
+              backdrop: "http://image.tmdb.org/t/p/w500" + data.backdrop_path,
+              seasons: season,
+            },
           },
         },
-      },
-      { merge: true }
-    );
+
+        { merge: true }
+      );
+    });
   }
 
   const renderSeasonTabs = () => {
@@ -96,6 +139,7 @@ const TVShowDetailsScreen: React.FC<Props> = (props) => {
         backgroundColor: "#18181b",
       }}
     >
+      <StatusBar hidden translucent backgroundColor="transparent" />
       <ScrollView
         style={{ flex: 1 }}
         contentContainerStyle={{

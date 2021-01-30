@@ -227,3 +227,12 @@ export enum Job {
   The3DAnimator = "3D Animator",
   Writer = "Writer",
 }
+
+export type MovieGenres = {
+  genres: Genres[];
+};
+
+export type Genres = {
+  id: number;
+  name: string;
+};

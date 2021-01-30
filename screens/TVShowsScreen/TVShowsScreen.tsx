@@ -15,7 +15,7 @@ export default function TVShowsScreen() {
       }}
     >
       <TVShowNavigationBar />
-      <StatusBar translucent backgroundColor="transparent" />
+      <StatusBar backgroundColor="#b9042c" barStyle="dark-content" />
     </SafeAreaView>
   );
 }

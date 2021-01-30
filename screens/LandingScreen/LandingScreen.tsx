@@ -4,8 +4,10 @@ import { Video } from "expo-av";
 import * as S from "./styled";
 import { useNavigation } from "@react-navigation/native";
 import { ScreenRoute } from "../../navigation/constants";
+import { auth } from "firebase";
 
 export default function LandingScreen() {
+  const user: firebase.User = auth().currentUser;
   const { height } = Dimensions.get("screen");
   const navigation = useNavigation();
 
@@ -16,6 +18,10 @@ export default function LandingScreen() {
   const handleSignUp = () => {
     navigation.navigate(ScreenRoute.SIGNUP_SCREEN);
   };
+
+  if (user) {
+    navigation.navigate(ScreenRoute.MOVIES_SCREEN);
+  }
 
   return (
     <View style={{ flex: 1, justifyContent: "center" }}>

@@ -16,6 +16,7 @@ type FormData = {
 
 export default function LoginScreen() {
   const [initializing, setInitializing] = useState(true);
+  const firebaseUser: firebase.User = auth().currentUser;
   const [user, setUser] = useState();
 
   const { height } = Dimensions.get("screen");
@@ -28,6 +29,10 @@ export default function LoginScreen() {
     return subscriber;
   }, []);
 
+  if (firebaseUser) {
+    navigation.navigate(ScreenRoute.MOVIES_SCREEN);
+  }
+
   function onAuthStateChanged(user: any) {
     setUser(user);
     if (initializing) {
@@ -36,7 +41,6 @@ export default function LoginScreen() {
   }
 
   const onSubmit = (data: FormData) => {
-    console.log("Submit!", data);
     const { email, password } = data;
     auth()
       .signInWithEmailAndPassword(email, password)

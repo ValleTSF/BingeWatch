@@ -1,40 +1,41 @@
-import React, { useState } from "react";
+import { Feather } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
+import { Card, Container, Header } from "native-base";
+import React, { useEffect, useState } from "react";
 import {
   View,
-  Dimensions,
-  TextInput,
-  StatusBar,
-  Image,
   Text,
+  Dimensions,
   TouchableOpacity,
+  Image,
+  StatusBar,
 } from "react-native";
-import { Header, Card } from "native-base";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { getMovieSearch } from "../../../api/movieApi";
-import { PopularMovieResult } from "../../../api/types";
-import { useNavigation } from "@react-navigation/native";
-import { ScreenRoute } from "../../../navigation/constants";
-import * as S from "./styled";
 import { FlatList, ScrollView } from "react-native-gesture-handler";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { getMoviesOnGenre, getTvShowsOnGenre } from "../../../api/movieApi";
+import { PopularMovieResult } from "../../../api/types";
+import { ScreenRoute } from "../../../navigation/constants";
+import * as S from "../styled";
 
-export default function MovieSearchScreen() {
-  const [data, setData] = useState<PopularMovieResult>({
-    page: 0,
-    results: [],
-    total_pages: 0,
-    total_results: 0,
-  });
+export default function MovieSelectedGenreScreen(props: any) {
+  const { genre, name } = props.route.params;
+  const [data, setData] = useState<PopularMovieResult>();
   const navigation = useNavigation();
 
-  const onChangeSearch = async (searchText: any) => {
-    if (!searchText) {
-      setData({ page: 0, results: [], total_pages: 0, total_results: 0 });
-    }
-    const { data } = await getMovieSearch(searchText);
+  useEffect(() => {
+    init();
+  }, []);
+
+  const onPressSearch = () => {
+    navigation.navigate(ScreenRoute.MOVIE_SEARCH_SCREEN);
+  };
+
+  const init = async () => {
+    const { data } = await getMoviesOnGenre(genre);
     setData(data);
   };
 
-  const renderMovies = () => {
+  const renderTvShows = () => {
     const { results } = data;
     const filteredResults = results.filter(
       (m) => m.poster_path !== null && m.backdrop_path !== null
@@ -48,15 +49,15 @@ export default function MovieSearchScreen() {
         keyExtractor={(movie) => movie.id.toString()}
         data={filteredResults}
         renderItem={({ item }) => {
-          const onPressTvShow = () => {
+          const onPressMovie = () => {
             navigation.navigate(ScreenRoute.MOVIE_DETAILS, { movie: item });
           };
           return (
-            <TouchableOpacity onPress={onPressTvShow}>
+            <TouchableOpacity onPress={onPressMovie}>
               <Card
                 style={{
                   backgroundColor: "#18181b",
-                  marginBottom: 50,
+                  marginBottom: 5,
                   marginRight: 5,
                   marginLeft: 5,
                 }}
@@ -76,9 +77,9 @@ export default function MovieSearchScreen() {
     );
   };
 
-  return (
-    <SafeAreaView>
-      <ScrollView
+  if (!data) {
+    return (
+      <SafeAreaView
         style={{
           backgroundColor: "#18181b",
           width: Dimensions.get("window").width,
@@ -91,15 +92,31 @@ export default function MovieSearchScreen() {
             justifyContent: "space-between",
           }}
         >
-          <TextInput
-            onChangeText={onChangeSearch}
-            autoFocus
-            placeholder="Search Movies..."
-            placeholderTextColor="#d1d1d4"
-            style={{ color: "white" }}
-          ></TextInput>
+          <S.Header>{name}</S.Header>
+          <TouchableOpacity style={{ top: 15 }} onPress={onPressSearch}>
+            <Feather name="search" size={28} color="#d1d1d1" />
+          </TouchableOpacity>
         </Header>
-        <S.Container>{renderMovies()}</S.Container>
+        <StatusBar backgroundColor="#b9042c" barStyle="dark-content" />
+      </SafeAreaView>
+    );
+  }
+
+  return (
+    <SafeAreaView>
+      <Header
+        style={{
+          backgroundColor: "#b9042c",
+          justifyContent: "space-between",
+        }}
+      >
+        <S.Header>{name}</S.Header>
+        <TouchableOpacity style={{ top: 15 }} onPress={onPressSearch}>
+          <Feather name="search" size={28} color="#d1d1d1" />
+        </TouchableOpacity>
+      </Header>
+      <ScrollView>
+        <S.Container>{renderTvShows()}</S.Container>
       </ScrollView>
       <StatusBar backgroundColor="#b9042c" barStyle="dark-content" />
     </SafeAreaView>

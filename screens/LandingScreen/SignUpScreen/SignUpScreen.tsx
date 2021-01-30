@@ -45,7 +45,6 @@ export default function LoginScreen() {
         userId: email.toLowerCase(),
       })
       .then((doc) => {
-        console.log(doc.id);
         documentId = doc.id;
       });
     await usersRef.doc(email.toLowerCase()).set({
@@ -55,7 +54,6 @@ export default function LoginScreen() {
   };
 
   const onSubmit = (data: FormData) => {
-    console.log("Submit!", data);
     const { email, password } = data;
     auth()
       .createUserWithEmailAndPassword(email, password)
