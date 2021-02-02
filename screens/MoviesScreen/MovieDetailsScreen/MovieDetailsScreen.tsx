@@ -1,7 +1,7 @@
 import { RouteProp } from "@react-navigation/native";
 import { Text, View } from "native-base";
 import React from "react";
-import { Dimensions, Image } from "react-native";
+import { Dimensions, Image, ToastAndroid } from "react-native";
 import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
 import { ScreenRoute } from "../../../navigation/constants";
 import { RootStackParamList } from "../../../types";
@@ -38,6 +38,11 @@ const MovieDetailsScreen: React.FC<Props> = (props) => {
         },
       },
       { merge: true }
+    );
+    ToastAndroid.showWithGravity(
+      "Added to Watchlist!",
+      ToastAndroid.SHORT,
+      ToastAndroid.CENTER
     );
   }
 

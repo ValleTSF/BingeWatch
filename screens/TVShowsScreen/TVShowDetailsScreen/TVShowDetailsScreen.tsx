@@ -2,7 +2,7 @@ import { RouteProp } from "@react-navigation/native";
 import { auth, firestore } from "firebase";
 import { Tab, TabHeading, Tabs, Text, View } from "native-base";
 import React, { useEffect, useState } from "react";
-import { Dimensions, Image, StatusBar } from "react-native";
+import { Dimensions, Image, StatusBar, ToastAndroid } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import {
   getTVShowDetails,
@@ -103,6 +103,7 @@ const TVShowDetailsScreen: React.FC<Props> = (props) => {
               title: data.name,
               overview: show.overview,
               backdrop: "http://image.tmdb.org/t/p/w500" + data.backdrop_path,
+              id: data.id,
               seasons: season,
             },
           },
@@ -111,6 +112,11 @@ const TVShowDetailsScreen: React.FC<Props> = (props) => {
         { merge: true }
       );
     });
+    ToastAndroid.showWithGravity(
+      "Added to Watchlist!",
+      ToastAndroid.SHORT,
+      ToastAndroid.CENTER
+    );
   }
 
   const renderSeasonTabs = () => {

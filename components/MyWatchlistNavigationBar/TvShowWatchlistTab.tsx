@@ -5,6 +5,9 @@ import Swipeout from "react-native-swipeout";
 import "firebase/firestore";
 import "firebase/auth";
 import { auth, firestore } from "firebase";
+import { useNavigation } from "@react-navigation/native";
+import { ScreenRoute } from "../../navigation/constants";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 export default function TvShowWatchlistTab(props: any) {
   let startingWatchlist: any[] = [];
@@ -14,6 +17,7 @@ export default function TvShowWatchlistTab(props: any) {
   const user: firebase.User = auth().currentUser;
   const { email } = user;
   const watchlistRef = firestore().collection("Watchlist");
+  const navigation = useNavigation();
 
   useEffect(() => {
     init();
@@ -42,6 +46,7 @@ export default function TvShowWatchlistTab(props: any) {
         overview: tvShows[tvShow].overview,
         release: tvShows[tvShow].release,
         title: tvShows[tvShow].title,
+        id: tvShows[tvShow].id,
       };
       convertedTvShowList.push(newShow);
     }
@@ -65,12 +70,53 @@ export default function TvShowWatchlistTab(props: any) {
         setSplicedObject(tvShowWatchlist.splice(tvShowWatchlist.indexOf(s), 1));
       };
 
+      const handleOnPressEpisodes = () => {
+        navigation.navigate(ScreenRoute.TV_SHOW_WATCHLIST_DETAILS_SCREEN, {
+          showId: s.id,
+          showTitle: s.title,
+        });
+      };
+
       const swipeButtons = [
         {
-          text: "Delete",
-          color: "white",
-          backgroundColor: "#b9042c",
+          component: (
+            <View
+              style={{
+                flex: 1,
+                alignItems: "center",
+                justifyContent: "center",
+                flexDirection: "column",
+              }}
+            >
+              <MaterialCommunityIcons
+                name="trash-can-outline"
+                size={40}
+                color="#18181b"
+              />
+            </View>
+          ),
+          backgroundColor: "#dd1818",
           onPress: handleOnPressDelete,
+        },
+        {
+          component: (
+            <View
+              style={{
+                flex: 1,
+                alignItems: "center",
+                justifyContent: "center",
+                flexDirection: "column",
+              }}
+            >
+              <MaterialCommunityIcons
+                name="movie-edit"
+                size={40}
+                color="#18181b"
+              />
+            </View>
+          ),
+          backgroundColor: "#184ddd",
+          onPress: handleOnPressEpisodes,
         },
       ];
       return (

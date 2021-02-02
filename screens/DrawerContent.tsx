@@ -34,7 +34,7 @@ export function DrawerContent(props: any) {
 
               <View style={{ marginLeft: 15, flexDirection: "column" }}></View>
             </View>
-            <View style={{ marginTop: 15 }}>
+            {/* <View style={{ marginTop: 15 }}>
               <Title style={styles.title}>Watch List</Title>
             </View>
             <View style={styles.row}>
@@ -50,7 +50,7 @@ export function DrawerContent(props: any) {
                 </Paragraph>
                 <Caption style={styles.caption}>TV-shows</Caption>
               </View>
-            </View>
+            </View> */}
           </View>
 
           <Drawer.Section style={styles.drawerSection}>

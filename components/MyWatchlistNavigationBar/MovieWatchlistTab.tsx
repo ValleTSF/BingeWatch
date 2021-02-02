@@ -5,6 +5,7 @@ import Swipeout from "react-native-swipeout";
 import "firebase/firestore";
 import "firebase/auth";
 import { auth, firestore } from "firebase";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 export default function MovieWatchlistTab(props: any) {
   let startingWatchlist: any[] = [];
@@ -67,9 +68,19 @@ export default function MovieWatchlistTab(props: any) {
 
       const swipeButtons = [
         {
-          text: "Delete",
-          color: "white",
-          backgroundColor: "#b9042c",
+          component: (
+            <View
+              style={{
+                flex: 1,
+                alignItems: "center",
+                justifyContent: "center",
+                flexDirection: "column",
+              }}
+            >
+              <MaterialCommunityIcons name="eye" size={40} color="#18181b" />
+            </View>
+          ),
+          backgroundColor: "#18dd22",
           onPress: handleOnPressDelete,
         },
       ];

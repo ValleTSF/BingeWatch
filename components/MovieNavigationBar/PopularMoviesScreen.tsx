@@ -35,6 +35,11 @@ export default function PopularMoviesScreen() {
     <S.Container>
       <FlatList
         numColumns={2}
+        contentContainerStyle={{
+          flexGrow: 1,
+          justifyContent: "center",
+          alignItems: "center",
+        }}
         style={{
           width: Dimensions.get("window").width,
         }}
@@ -49,9 +54,7 @@ export default function PopularMoviesScreen() {
               <Card
                 style={{
                   backgroundColor: "#18181b",
-                  marginBottom: 50,
-                  marginRight: 5,
-                  marginLeft: 5,
+                  margin: 5,
                 }}
                 transparent
               >

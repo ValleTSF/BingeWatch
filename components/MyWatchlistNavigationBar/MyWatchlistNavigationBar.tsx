@@ -5,6 +5,7 @@ import MovieWatchlistTab from "./MovieWatchlistTab";
 import TVShowWatchlistTab from "./TvShowWatchlistTab";
 import { auth, firestore } from "firebase";
 import { useNavigation } from "@react-navigation/native";
+import { StatusBar } from "react-native";
 
 export default function MyWatchlistNavigationBar() {
   const user: firebase.User = auth().currentUser;

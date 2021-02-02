@@ -1,6 +1,5 @@
-import { StatusBar } from "expo-status-bar";
 import * as React from "react";
-import { Dimensions } from "react-native";
+import { Dimensions, StatusBar } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import "firebase/auth";
 import MyWatchlistNavigationBar from "../../components/MyWatchlistNavigationBar";
@@ -15,7 +14,7 @@ export default function TVShowsScreen() {
       }}
     >
       <MyWatchlistNavigationBar />
-      <StatusBar translucent backgroundColor="transparent" />
+      <StatusBar backgroundColor="#b9042c" barStyle="dark-content" />
     </SafeAreaView>
   );
 }

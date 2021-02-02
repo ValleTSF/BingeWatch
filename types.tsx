@@ -13,6 +13,8 @@ export type RootStackParamList = {
   [ScreenRoute.MOVIE_SEARCH_SCREEN]: undefined;
   [ScreenRoute.TV_SHOW_SEARCH_SCREEN]: undefined;
   [ScreenRoute.SELECTED_GENRE_TV_SHOW_SCREEN]: undefined;
+  [ScreenRoute.SELECTED_GENRE_MOVIE_SCREEN]: undefined;
+  [ScreenRoute.TV_SHOW_WATCHLIST_DETAILS_SCREEN]: undefined;
   NotFound: undefined;
   Movies: undefined;
 };
