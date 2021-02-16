@@ -1,11 +1,17 @@
 import { Video } from "expo-av";
-import React, { useContext, useEffect, useRef, useState } from "react";
-import { View, Text, Image, Dimensions, TextInput } from "react-native";
+import React, { useEffect, useState } from "react";
+import {
+  View,
+  Text,
+  Image,
+  Dimensions,
+  TextInput,
+  ToastAndroid,
+} from "react-native";
 import { useForm, Controller } from "react-hook-form";
 import * as S from "../styled";
-import { TouchableOpacity } from "react-native-gesture-handler";
 import "firebase/auth";
-import { auth, firestore } from "firebase";
+import firebase from "firebase/app";
 import { useNavigation } from "@react-navigation/native";
 import { ScreenRoute } from "../../../navigation/constants";
 
@@ -15,11 +21,13 @@ type FormData = {
 };
 
 export default function LoginScreen() {
-  const usersRef = firestore().collection("Users");
-  const watchlistRef = firestore().collection("Watchlist");
+  const usersRef = firebase.firestore().collection("Users");
+  const watchlistRef = firebase.firestore().collection("Watchlist");
 
   const [initializing, setInitializing] = useState(true);
   const [user, setUser] = useState();
+  const [userPassword, setUserPassword] = useState<String>();
+  const [confirmPassword, setConfirmPassword] = useState<String>();
 
   const { height } = Dimensions.get("screen");
   const { control, handleSubmit, errors } = useForm<FormData>();
@@ -27,7 +35,7 @@ export default function LoginScreen() {
   const navigation = useNavigation();
 
   useEffect(() => {
-    const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
+    const subscriber = firebase.auth().onAuthStateChanged(onAuthStateChanged);
     return subscriber;
   }, []);
 
@@ -54,24 +62,39 @@ export default function LoginScreen() {
   };
 
   const onSubmit = (data: FormData) => {
-    const { email, password } = data;
-    auth()
-      .createUserWithEmailAndPassword(email, password)
-      .then(() => {
-        createUserAndWatchlistInDatabase(email);
-        navigation.navigate(ScreenRoute.MOVIES_SCREEN);
-      })
-      .catch((error) => {
-        if (error.code === "auth/email-already-in-use") {
-          console.log("That email address is already in use!");
-        }
+    if (userPassword.length < 6) {
+      ToastAndroid.showWithGravity(
+        "Password needs 6 characters or longer!",
+        ToastAndroid.SHORT,
+        ToastAndroid.CENTER
+      );
+    } else if (userPassword == confirmPassword) {
+      const { email, password } = data;
+      firebase
+        .auth()
+        .createUserWithEmailAndPassword(email, password)
+        .then(() => {
+          createUserAndWatchlistInDatabase(email);
+          navigation.navigate(ScreenRoute.MOVIES_SCREEN);
+        })
+        .catch((error) => {
+          if (error.code === "auth/email-already-in-use") {
+            console.log("That email address is already in use!");
+          }
 
-        if (error.code === "auth/invalid-email") {
-          console.log("That email address is invalid!");
-        }
+          if (error.code === "auth/invalid-email") {
+            console.log("That email address is invalid!");
+          }
 
-        console.error(error);
-      });
+          console.error(error);
+        });
+    } else {
+      ToastAndroid.showWithGravity(
+        "Passwords do not match!",
+        ToastAndroid.SHORT,
+        ToastAndroid.CENTER
+      );
+    }
   };
 
   return (
@@ -148,6 +171,7 @@ export default function LoginScreen() {
                 secureTextEntry={true}
                 onChangeText={(value) => {
                   props.onChange(value);
+                  setUserPassword(value);
                 }}
                 style={{
                   backgroundColor: "white",
@@ -159,11 +183,33 @@ export default function LoginScreen() {
             )}
           />
         </View>
-        <View style={{ marginLeft: 50 }}>
-          <TouchableOpacity>
-            <Text style={{ color: "white" }}>Forgot your password?</Text>
-          </TouchableOpacity>
+        <View style={{ marginLeft: 50, marginRight: 50, marginTop: 15 }}>
+          <Text style={{ color: "white", fontWeight: "bold" }}>
+            Confirm Password
+          </Text>
+          <Controller
+            name="passwordConfirm"
+            control={control}
+            rules={{ required: "Password is required." }}
+            render={(props) => (
+              <TextInput
+                {...props}
+                secureTextEntry={true}
+                onChangeText={(value) => {
+                  props.onChange(value);
+                  setConfirmPassword(value);
+                }}
+                style={{
+                  backgroundColor: "white",
+                  height: 40,
+                  padding: 10,
+                  borderRadius: 10,
+                }}
+              />
+            )}
+          />
         </View>
+        <View style={{ marginLeft: 50 }}></View>
         <View
           style={{
             flex: 1,

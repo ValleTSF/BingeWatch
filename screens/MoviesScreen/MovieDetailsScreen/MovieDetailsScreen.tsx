@@ -2,12 +2,12 @@ import { RouteProp } from "@react-navigation/native";
 import { Text, View } from "native-base";
 import React from "react";
 import { Dimensions, Image, ToastAndroid } from "react-native";
-import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
+import { ScrollView } from "react-native-gesture-handler";
 import { ScreenRoute } from "../../../navigation/constants";
 import { RootStackParamList } from "../../../types";
 import "firebase/firestore";
 import * as S from "./styled";
-import { auth, firestore } from "firebase";
+import firebase from "firebase/app";
 import { StatusBar } from "expo-status-bar";
 
 type Props = {
@@ -15,8 +15,8 @@ type Props = {
 };
 
 const MovieDetailsScreen: React.FC<Props> = (props) => {
-  const user: firebase.User = auth().currentUser;
-  const watchlistRef = firestore().collection("Watchlist");
+  const user: firebase.User = firebase.auth().currentUser;
+  const watchlistRef = firebase.firestore().collection("Watchlist");
   const { email } = user;
   const { movie } = props.route.params;
 

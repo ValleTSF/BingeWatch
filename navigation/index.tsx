@@ -27,9 +27,6 @@ import TvShowSelectedGenreScreen from "../components/TVShowNavigationBar/TvShowS
 import MovieSelectedGenreScreen from "../components/MovieNavigationBar/MovieSelectedGenreScreen";
 import TvShowWatchlistDetails from "../screens/WatchListScreen/TvShowWatchlistDetails/TvShowWatchlistDetails";
 
-// If you are not familiar with React Navigation, we recommend going through the
-// "Fundamentals" guide: https://reactnavigation.org/docs/getting-started
-
 const Drawer = createDrawerNavigator();
 
 export default function Navigation({
@@ -49,8 +46,6 @@ export default function Navigation({
   );
 }
 
-// A root stack navigator is often used for displaying modals on top of all other content
-// Read more here: https://reactnavigation.org/docs/modal
 const Stack = createStackNavigator<RootStackParamList>();
 
 function RootNavigator() {

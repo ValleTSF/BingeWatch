@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import {
-  View,
   Dimensions,
   TextInput,
   StatusBar,
   Image,
-  Text,
   TouchableOpacity,
 } from "react-native";
 import { Header, Card } from "native-base";

@@ -1,5 +1,5 @@
 import { RouteProp } from "@react-navigation/native";
-import { auth, firestore } from "firebase";
+import firebase from "firebase/app";
 import { Tab, TabHeading, Tabs, Text, View } from "native-base";
 import React, { useEffect, useState } from "react";
 import { Dimensions, Image, StatusBar, ToastAndroid } from "react-native";
@@ -18,9 +18,9 @@ type Props = {
   route: RouteProp<RootStackParamList, ScreenRoute.TV_SHOWS_SCREEN>;
 };
 
-const TVShowDetailsScreen: React.FC<Props> = (props) => {
-  const user: firebase.User = auth().currentUser;
-  const watchlistRef = firestore().collection("Watchlist");
+const TVShowDetailsScreen: React.FC<Props> = (props: any) => {
+  const user: firebase.User = firebase.auth().currentUser;
+  const watchlistRef = firebase.firestore().collection("Watchlist");
   const { email } = user;
   const [data, setData] = useState<TVShowDetails>();
   const { show } = props.route.params;

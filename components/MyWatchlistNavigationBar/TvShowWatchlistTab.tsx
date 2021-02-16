@@ -4,7 +4,7 @@ import "react-native-gesture-handler";
 import Swipeout from "react-native-swipeout";
 import "firebase/firestore";
 import "firebase/auth";
-import { auth, firestore } from "firebase";
+import firebase from "firebase/app";
 import { useNavigation } from "@react-navigation/native";
 import { ScreenRoute } from "../../navigation/constants";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -12,11 +12,11 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 export default function TvShowWatchlistTab(props: any) {
   let startingWatchlist: any[] = [];
   const [tvShowWatchlist, setTvShowWatchlist] = useState([]);
-  const [watchlistSnapshot, setWatchlistSnapshot] = useState();
+  const [watchlistSnapshot, setWatchlistSnapshot] = useState<any>();
   const [splicedObject, setSplicedObject] = useState([]);
-  const user: firebase.User = auth().currentUser;
+  const user: firebase.User = firebase.auth().currentUser;
   const { email } = user;
-  const watchlistRef = firestore().collection("Watchlist");
+  const watchlistRef = firebase.firestore().collection("Watchlist");
   const navigation = useNavigation();
 
   useEffect(() => {
@@ -58,7 +58,7 @@ export default function TvShowWatchlistTab(props: any) {
     return tvShowWatchlist.map((s) => {
       const handleOnPressDelete = () => {
         const documentRef = watchlistRef.doc(watchlistSnapshot.docs[0].id);
-        const FieldValue = firestore.FieldValue;
+        const FieldValue = firebase.firestore.FieldValue;
         documentRef.set(
           {
             tvShows: {

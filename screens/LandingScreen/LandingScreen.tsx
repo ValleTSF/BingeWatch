@@ -4,7 +4,6 @@ import { Video } from "expo-av";
 import * as S from "./styled";
 import { useNavigation } from "@react-navigation/native";
 import { ScreenRoute } from "../../navigation/constants";
-import { auth } from "firebase";
 
 export default function LandingScreen() {
   const { height } = Dimensions.get("screen");

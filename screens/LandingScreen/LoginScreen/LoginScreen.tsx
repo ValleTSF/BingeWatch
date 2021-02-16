@@ -5,7 +5,7 @@ import { useForm, Controller } from "react-hook-form";
 import * as S from "../styled";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import "firebase/auth";
-import { auth } from "firebase";
+import firebase from "firebase/app";
 import { useNavigation } from "@react-navigation/native";
 import { ScreenRoute } from "../../../navigation/constants";
 
@@ -24,7 +24,7 @@ export default function LoginScreen() {
   const navigation = useNavigation();
 
   useEffect(() => {
-    const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
+    const subscriber = firebase.auth().onAuthStateChanged(onAuthStateChanged);
     return subscriber;
   }, []);
 
@@ -37,12 +37,13 @@ export default function LoginScreen() {
 
   const onSubmit = (data: FormData) => {
     const { email, password } = data;
-    auth()
+    firebase
+      .auth()
       .signInWithEmailAndPassword(email, password)
       .then(() => {
         navigation.navigate(ScreenRoute.MOVIES_SCREEN);
       })
-      .catch((error) => {
+      .catch((error: any) => {
         if (error.code === "auth/email-already-in-use") {
           console.log("That email address is already in use!");
         }

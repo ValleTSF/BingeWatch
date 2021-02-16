@@ -4,18 +4,18 @@ import { StatusBar, Dimensions, View, Text, Image } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { SafeAreaView } from "react-native-safe-area-context";
 import * as S from "./styled";
-import { auth, firestore } from "firebase";
+import firebase from "firebase/app";
 import { Episode } from "../../../api/types";
 import Swipeout from "react-native-swipeout";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 export default function TvShowWatchlistDetails(props: any) {
   let startingWatchlist: any[] = [];
-  const watchlistRef = firestore().collection("Watchlist");
+  const watchlistRef = firebase.firestore().collection("Watchlist");
   const [splice, setSplice] = useState(false);
   const [tvShowWatchlist, setTvShowWatchlist] = useState([]);
-  const [watchlistSnapshot, setWatchlistSnapshot] = useState();
-  const user: firebase.User = auth().currentUser;
+  const [watchlistSnapshot, setWatchlistSnapshot] = useState<any>();
+  const user: firebase.User = firebase.auth().currentUser;
   const { email } = user;
   const { showId, showTitle } = props.route.params;
 
@@ -58,7 +58,7 @@ export default function TvShowWatchlistDetails(props: any) {
     return season.map((e) => {
       const handleOnPressWatched = () => {
         const documentRef = watchlistRef.doc(watchlistSnapshot.docs[0].id);
-        const FieldValue = firestore.FieldValue;
+        const FieldValue = firebase.firestore.FieldValue;
         documentRef.set(
           {
             tvShows: {

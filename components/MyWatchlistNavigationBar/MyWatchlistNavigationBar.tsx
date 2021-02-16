@@ -3,14 +3,14 @@ import { Container, Header, Tab, Tabs, TabHeading, Text } from "native-base";
 import * as S from "./styled";
 import MovieWatchlistTab from "./MovieWatchlistTab";
 import TVShowWatchlistTab from "./TvShowWatchlistTab";
-import { auth, firestore } from "firebase";
+import firebase from "firebase/app";
 import { useNavigation } from "@react-navigation/native";
 import { StatusBar } from "react-native";
 
 export default function MyWatchlistNavigationBar() {
-  const user: firebase.User = auth().currentUser;
+  const user: firebase.User = firebase.auth().currentUser;
   const { email } = user;
-  const watchlistRef = firestore().collection("Watchlist");
+  const watchlistRef = firebase.firestore().collection("Watchlist");
   const [movies, setMovies] = useState();
   const [tvShows, setTvShows] = useState();
   const navigation = useNavigation();

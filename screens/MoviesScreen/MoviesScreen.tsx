@@ -15,7 +15,7 @@ export default function MoviesScreen() {
       }}
     >
       <MovieNavigationBar />
-      <StatusBar backgroundColor="#b9042c" barStyle="dark-content" />
+      <StatusBar backgroundColor="#b9042c" />
     </SafeAreaView>
   );
 }

@@ -1,16 +1,18 @@
+// @ts-nocheck
 import * as React from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet } from "react-native";
 import { DrawerContentScrollView } from "@react-navigation/drawer";
-import { Title, Caption, Paragraph, Drawer } from "react-native-paper";
+import { Title, Drawer } from "react-native-paper";
 import { ScreenRoute } from "../navigation/constants";
-import { auth } from "firebase";
+import firebase from "firebase/app";
 import "firebase/firestore";
 
 export function DrawerContent(props: any) {
-  const user: firebase.User = auth().currentUser;
+  const user: firebase.User = firebase.auth().currentUser;
 
   const handleSignOut = () => {
-    auth()
+    firebase
+      .auth()
       .signOut()
       .then(() => {
         props.navigation.navigate(ScreenRoute.LANDING_SCREEN);
@@ -34,23 +36,6 @@ export function DrawerContent(props: any) {
 
               <View style={{ marginLeft: 15, flexDirection: "column" }}></View>
             </View>
-            {/* <View style={{ marginTop: 15 }}>
-              <Title style={styles.title}>Watch List</Title>
-            </View>
-            <View style={styles.row}>
-              <View style={styles.section}>
-                <Paragraph style={[styles.paragraph, styles.caption]}>
-                  16
-                </Paragraph>
-                <Caption style={styles.caption}>Movies</Caption>
-              </View>
-              <View style={styles.section}>
-                <Paragraph style={[styles.paragraph, styles.caption]}>
-                  4
-                </Paragraph>
-                <Caption style={styles.caption}>TV-shows</Caption>
-              </View>
-            </View> */}
           </View>
 
           <Drawer.Section style={styles.drawerSection}>
