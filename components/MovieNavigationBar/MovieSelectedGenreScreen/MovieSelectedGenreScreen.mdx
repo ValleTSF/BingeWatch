@@ -1,0 +1,64 @@
+---
+name: Movie Selected Genre Screen
+route: /movieselectedgenrescreen
+---
+
+# Movie Selected Genre Screen
+
+This screen renders the most popular movies belonging to the selected genre. It also has a search button which navigates the user to the movie search screen.
+
+## init()
+
+---
+
+Parameter: none
+
+---
+
+//
+
+This function initiates the screen, requesting the data from the API and storing it in a variable to be rendered.
+
+//
+
+## renderMovies()
+
+---
+
+Parameter: none
+
+---
+
+//
+
+This function takes the data from the API call and filters it to only get results with an image. It then returns a flatlist which renders all the movies. All movies rendered contain a onPressMovie() function.
+
+//
+
+## onPressMovie()
+
+---
+
+Parameter: none
+
+---
+
+//
+
+This function navigates the user to the movie details screen. It also sends the movie data to the movie details screen.
+
+//
+
+## onPressSearch()
+
+---
+
+Parameter: none
+
+---
+
+//
+
+This function navigates the user to the movie search screen.
+
+//

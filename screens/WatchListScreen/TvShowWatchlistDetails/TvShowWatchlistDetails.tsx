@@ -1,11 +1,10 @@
-import { Container, Header } from "native-base";
+import { Header } from "native-base";
 import React, { useEffect, useState } from "react";
 import { StatusBar, Dimensions, View, Text, Image } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { SafeAreaView } from "react-native-safe-area-context";
 import * as S from "./styled";
 import firebase from "firebase/app";
-import { Episode } from "../../../api/types";
 import Swipeout from "react-native-swipeout";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
@@ -20,7 +19,7 @@ export default function TvShowWatchlistDetails(props: any) {
   const { showId, showTitle } = props.route.params;
 
   useEffect(() => {
-    init();
+    generateData();
   }, []);
 
   const convertDataToArray = (tvShows: any) => {
@@ -37,10 +36,6 @@ export default function TvShowWatchlistDetails(props: any) {
       convertedTvShowList.push(newShow);
     }
     startingWatchlist = convertedTvShowList;
-  };
-
-  const init = () => {
-    generateData();
   };
 
   async function generateData() {
@@ -149,7 +144,6 @@ export default function TvShowWatchlistDetails(props: any) {
     });
 
     return seasonList.map((s) => {
-      console.log("s", s.length);
       if (s.length < 1) {
         return <View></View>;
       }

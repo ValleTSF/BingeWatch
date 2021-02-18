@@ -1,0 +1,64 @@
+---
+name: TV-show Selected Genre Screen
+route: /tvshowselectedgenrescreen
+---
+
+# TV-show Selected Genre Screen
+
+This screen renders the most popular tv-shows belonging to the selected genre. It also has a search button which navigates the user to the tv-show search screen.
+
+## init()
+
+---
+
+Parameter: none
+
+---
+
+//
+
+This function initiates the screen, requesting the data from the API and storing it in a variable to be rendered.
+
+//
+
+## renderTvShows()
+
+---
+
+Parameter: none
+
+---
+
+//
+
+This function takes the data from the API call and filters it to only get results with an image. It then returns a flatlist which renders all the tv-shows. All tv-shows rendered contain a onPressShow() function.
+
+//
+
+## onPressShow()
+
+---
+
+Parameter: none
+
+---
+
+//
+
+This function navigates the user to the tv-show details screen. It also sends the tv-show data to the tv-show details screen.
+
+//
+
+## onPressSearch()
+
+---
+
+Parameter: none
+
+---
+
+//
+
+This function navigates the user to the tv-show search screen.
+
+//

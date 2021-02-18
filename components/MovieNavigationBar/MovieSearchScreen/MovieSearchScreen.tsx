@@ -24,7 +24,7 @@ export default function MovieSearchScreen() {
   });
   const navigation = useNavigation();
 
-  const onChangeSearch = async (searchText: any) => {
+  const onChangeSearch = async (searchText: String) => {
     if (!searchText) {
       setData({ page: 0, results: [], total_pages: 0, total_results: 0 });
     }
@@ -46,11 +46,11 @@ export default function MovieSearchScreen() {
         keyExtractor={(movie) => movie.id.toString()}
         data={filteredResults}
         renderItem={({ item }) => {
-          const onPressTvShow = () => {
+          const onPressMovie = () => {
             navigation.navigate(ScreenRoute.MOVIE_DETAILS, { movie: item });
           };
           return (
-            <TouchableOpacity onPress={onPressTvShow}>
+            <TouchableOpacity onPress={onPressMovie}>
               <Card
                 style={{
                   backgroundColor: "#18181b",

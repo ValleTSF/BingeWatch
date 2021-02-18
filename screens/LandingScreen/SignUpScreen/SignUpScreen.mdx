@@ -1,0 +1,47 @@
+---
+name: Sign up Screen
+route: /signupscreen
+---
+
+# Sign up Screen
+
+The sign up screen is used to help a user register to the app. The user is provided with three input fields, email, password and confirm password. When you press the "Sign Up" button the app will proceed to create an account with the provided data. If account creation is successful the user is navigated to the next screen.
+
+## onSubmit(data: FormData)
+
+---
+
+Parameter: FormData
+
+---
+
+//
+
+This function takes the FormData provided and attempts to create a user account on Firebase. If it is successful it calls the createUserAndWatchlistInDatabase() function and after that navigates to the next screen.
+If it is unsuccessful it cancels the procedure.
+
+//
+
+## createUserAndWatchlistInDatabase(email: String)
+
+---
+
+Parameter: String
+
+---
+
+//
+
+This function takes the string provided and creates two new documents in the database, one user and one watchlist owned by the user.
+
+//
+
+### FormData (Type)
+
+---
+
+email: String
+
+password: String
+
+---

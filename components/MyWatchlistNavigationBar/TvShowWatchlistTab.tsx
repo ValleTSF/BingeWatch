@@ -30,7 +30,7 @@ export default function TvShowWatchlistTab(props: any) {
     setTvShowWatchlist(startingWatchlist);
   };
 
-  const sortMovieList = () => {
+  const sortTvShowList = () => {
     tvShowWatchlist.sort((a, b) => a.title.localeCompare(b.title));
   };
 
@@ -53,8 +53,8 @@ export default function TvShowWatchlistTab(props: any) {
     startingWatchlist = convertedTvShowList;
   };
 
-  const renderMovieList = () => {
-    sortMovieList();
+  const renderTvShowList = () => {
+    sortTvShowList();
     return tvShowWatchlist.map((s) => {
       const handleOnPressDelete = () => {
         const documentRef = watchlistRef.doc(watchlistSnapshot.docs[0].id);
@@ -176,7 +176,7 @@ export default function TvShowWatchlistTab(props: any) {
           width: Dimensions.get("window").width,
         }}
       >
-        {renderMovieList()}
+        {renderTvShowList()}
       </ScrollView>
     </View>
   );

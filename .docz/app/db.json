@@ -1,0 +1,842 @@
+{
+  "config": {
+    "title": "My Doc",
+    "description": "My awesome app using docz",
+    "menu": [],
+    "repository": null,
+    "native": false,
+    "themeConfig": {},
+    "separator": "-"
+  },
+  "entries": [
+    {
+      "key": "BingeWatch.mdx",
+      "value": {
+        "name": "BingeWatch",
+        "route": "/",
+        "id": "e11f1c4ef1ec2b216d52824295eb6bc6",
+        "filepath": "BingeWatch.mdx",
+        "fullpath": "C:\\Users\\valle\\BingeWatch\\bingewatch-frontend\\BingeWatch\\BingeWatch.mdx",
+        "link": "",
+        "hidden": false,
+        "slug": "binge-watch",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "bingewatch",
+            "depth": 1,
+            "value": "BingeWatch"
+          }
+        ]
+      }
+    },
+    {
+      "key": "api/movieApi.mdx",
+      "value": {
+        "name": "Movie API",
+        "route": "/movieapi",
+        "id": "c16edd416a8a332c188d455bdfbe1baf",
+        "filepath": "api/movieApi.mdx",
+        "fullpath": "C:\\Users\\valle\\BingeWatch\\bingewatch-frontend\\BingeWatch\\api\\movieApi.mdx",
+        "link": "",
+        "hidden": false,
+        "slug": "api-movie-api",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "movie-api",
+            "depth": 1,
+            "value": "Movie API"
+          },
+          {
+            "slug": "getpopularmovies",
+            "depth": 2,
+            "value": "getPopularMovies()"
+          },
+          {
+            "slug": "getpopulartvshows",
+            "depth": 2,
+            "value": "getPopularTVShows()"
+          },
+          {
+            "slug": "gettvshowdetailsshowid-any",
+            "depth": 2,
+            "value": "getTVShowDetails(showId: any)"
+          },
+          {
+            "slug": "gettvshowseasondetailsshowid-any-seasonnumber-any",
+            "depth": 2,
+            "value": "getTVShowSeasonDetails(showId: any, seasonNumber: any)"
+          },
+          {
+            "slug": "getmoviesearchsearchinput-any",
+            "depth": 2,
+            "value": "getMovieSearch(searchInput: any)"
+          },
+          {
+            "slug": "gettvshowsearchsearchinput-any",
+            "depth": 2,
+            "value": "getTvShowSearch(searchInput: any)"
+          },
+          {
+            "slug": "getmoviegenres",
+            "depth": 2,
+            "value": "getMovieGenres()"
+          },
+          {
+            "slug": "gettvshowgenres",
+            "depth": 2,
+            "value": "getTvShowGenres()"
+          },
+          {
+            "slug": "gettvshowsongenregenreid-number",
+            "depth": 2,
+            "value": "getTvShowsOnGenre(genreId: number)"
+          },
+          {
+            "slug": "getmoviesongenregenreid-number",
+            "depth": 2,
+            "value": "getMoviesOnGenre(genreId: number)"
+          }
+        ]
+      }
+    },
+    {
+      "key": "screens/DrawerContent.mdx",
+      "value": {
+        "name": "Drawer Content",
+        "route": "/drawercontent",
+        "id": "fb15ad65d7a6a361f5f3a3c88c476e3d",
+        "filepath": "screens/DrawerContent.mdx",
+        "fullpath": "C:\\Users\\valle\\BingeWatch\\bingewatch-frontend\\BingeWatch\\screens\\DrawerContent.mdx",
+        "link": "",
+        "hidden": false,
+        "slug": "screens-drawer-content",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "drawer-content",
+            "depth": 1,
+            "value": "Drawer Content"
+          },
+          {
+            "slug": "handlesignout",
+            "depth": 2,
+            "value": "handleSignOut()"
+          }
+        ]
+      }
+    },
+    {
+      "key": "components/MovieNavigationBar/MovieGenreScreen.mdx",
+      "value": {
+        "name": "Movie Genre Screen",
+        "route": "/moviegenrescreen",
+        "id": "3bc2d14ab26779ca532b9ad8c323e0cb",
+        "filepath": "components/MovieNavigationBar/MovieGenreScreen.mdx",
+        "fullpath": "C:\\Users\\valle\\BingeWatch\\bingewatch-frontend\\BingeWatch\\components\\MovieNavigationBar\\MovieGenreScreen.mdx",
+        "link": "",
+        "hidden": false,
+        "slug": "components-movie-navigation-bar-movie-genre-screen",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "movie-genre-screen",
+            "depth": 1,
+            "value": "Movie Genre Screen"
+          },
+          {
+            "slug": "init",
+            "depth": 2,
+            "value": "init()"
+          },
+          {
+            "slug": "rendergenres",
+            "depth": 2,
+            "value": "renderGenres()"
+          },
+          {
+            "slug": "ongenrepress",
+            "depth": 2,
+            "value": "onGenrePress()"
+          }
+        ]
+      }
+    },
+    {
+      "key": "components/MovieNavigationBar/MovieNavigationBar.mdx",
+      "value": {
+        "name": "Movie Navigation Bar",
+        "route": "/movienavigationbar",
+        "id": "25a6a3d009bbf0f901c881d94061d454",
+        "filepath": "components/MovieNavigationBar/MovieNavigationBar.mdx",
+        "fullpath": "C:\\Users\\valle\\BingeWatch\\bingewatch-frontend\\BingeWatch\\components\\MovieNavigationBar\\MovieNavigationBar.mdx",
+        "link": "",
+        "hidden": false,
+        "slug": "components-movie-navigation-bar-movie-navigation-bar",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "movie-navigation-bar",
+            "depth": 1,
+            "value": "Movie Navigation Bar"
+          },
+          {
+            "slug": "onpresssearch",
+            "depth": 2,
+            "value": "onPressSearch()"
+          }
+        ]
+      }
+    },
+    {
+      "key": "components/MovieNavigationBar/PopularMoviesScreen.mdx",
+      "value": {
+        "name": "Popular Movies Screen",
+        "route": "/popularmoviesscreen",
+        "id": "4adb34906ee477c235d4dc24e805f9cf",
+        "filepath": "components/MovieNavigationBar/PopularMoviesScreen.mdx",
+        "fullpath": "C:\\Users\\valle\\BingeWatch\\bingewatch-frontend\\BingeWatch\\components\\MovieNavigationBar\\PopularMoviesScreen.mdx",
+        "link": "",
+        "hidden": false,
+        "slug": "components-movie-navigation-bar-popular-movies-screen",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "popular-movies-screen",
+            "depth": 1,
+            "value": "Popular Movies Screen"
+          },
+          {
+            "slug": "init",
+            "depth": 2,
+            "value": "init()"
+          },
+          {
+            "slug": "onpressmovie",
+            "depth": 2,
+            "value": "onPressMovie()"
+          }
+        ]
+      }
+    },
+    {
+      "key": "components/MyWatchlistNavigationBar/MovieWatchlistTab.mdx",
+      "value": {
+        "name": "Movie Watchlist Tab",
+        "route": "/moviewatchlisttab",
+        "id": "a6aa255728013bec7cbad46ece0b9cd1",
+        "filepath": "components/MyWatchlistNavigationBar/MovieWatchlistTab.mdx",
+        "fullpath": "C:\\Users\\valle\\BingeWatch\\bingewatch-frontend\\BingeWatch\\components\\MyWatchlistNavigationBar\\MovieWatchlistTab.mdx",
+        "link": "",
+        "hidden": false,
+        "slug": "components-my-watchlist-navigation-bar-movie-watchlist-tab",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "movie-watchlist-tab",
+            "depth": 1,
+            "value": "Movie Watchlist tab"
+          },
+          {
+            "slug": "init",
+            "depth": 2,
+            "value": "init()"
+          },
+          {
+            "slug": "getwatchlistsnapshot",
+            "depth": 2,
+            "value": "getWatchlistSnapshot()"
+          },
+          {
+            "slug": "convertdatatoarraymovies-any",
+            "depth": 2,
+            "value": "convertDataToArray(movies: any)"
+          },
+          {
+            "slug": "sortmovielist",
+            "depth": 2,
+            "value": "sortMovieList()"
+          },
+          {
+            "slug": "rendermovielist",
+            "depth": 2,
+            "value": "renderMovieList()"
+          },
+          {
+            "slug": "handleonpressdelete",
+            "depth": 2,
+            "value": "handleOnPressDelete()"
+          }
+        ]
+      }
+    },
+    {
+      "key": "components/MyWatchlistNavigationBar/MyWatchlistNavigationBar.mdx",
+      "value": {
+        "name": "My Watchlist Navigation Bar",
+        "route": "/mywatchlistnavigationbar",
+        "id": "1de904101e516a03400300a0311ef4f9",
+        "filepath": "components/MyWatchlistNavigationBar/MyWatchlistNavigationBar.mdx",
+        "fullpath": "C:\\Users\\valle\\BingeWatch\\bingewatch-frontend\\BingeWatch\\components\\MyWatchlistNavigationBar\\MyWatchlistNavigationBar.mdx",
+        "link": "",
+        "hidden": false,
+        "slug": "components-my-watchlist-navigation-bar-my-watchlist-navigation-bar",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "my-watchlist-navigation-bar",
+            "depth": 1,
+            "value": "My Watchlist Navigation Bar"
+          },
+          {
+            "slug": "getwatchlists",
+            "depth": 2,
+            "value": "getWatchlists()"
+          }
+        ]
+      }
+    },
+    {
+      "key": "components/MyWatchlistNavigationBar/TvShowWatchlistTab.mdx",
+      "value": {
+        "name": "TV-Show Watchlist Tab",
+        "route": "/tvshowwatchlisttab",
+        "id": "645f644e98ade7b0d617e6ac7c08c18d",
+        "filepath": "components/MyWatchlistNavigationBar/TvShowWatchlistTab.mdx",
+        "fullpath": "C:\\Users\\valle\\BingeWatch\\bingewatch-frontend\\BingeWatch\\components\\MyWatchlistNavigationBar\\TvShowWatchlistTab.mdx",
+        "link": "",
+        "hidden": false,
+        "slug": "components-my-watchlist-navigation-bar-tv-show-watchlist-tab",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "tv-show-watchlist-tab",
+            "depth": 1,
+            "value": "TV-Show Watchlist Tab"
+          },
+          {
+            "slug": "init",
+            "depth": 2,
+            "value": "init()"
+          },
+          {
+            "slug": "getwatchlistsnapshot",
+            "depth": 2,
+            "value": "getWatchlistSnapshot()"
+          },
+          {
+            "slug": "convertdatatoarraytvshows-any",
+            "depth": 2,
+            "value": "convertDataToArray(tvShows: any)"
+          },
+          {
+            "slug": "sorttvshowlist",
+            "depth": 2,
+            "value": "sortTvShowList()"
+          },
+          {
+            "slug": "rendertvshowlist",
+            "depth": 2,
+            "value": "renderTvShowList()"
+          },
+          {
+            "slug": "handleonpressdelete",
+            "depth": 2,
+            "value": "handleOnPressDelete()"
+          }
+        ]
+      }
+    },
+    {
+      "key": "components/TVShowNavigationBar/PopularTvShowsScreen.mdx",
+      "value": {
+        "name": "Popular Tv-Shows Screen",
+        "route": "/populartvshowsscreen",
+        "id": "91e58d5fb47fe3b88d2b27a6392f8760",
+        "filepath": "components/TVShowNavigationBar/PopularTvShowsScreen.mdx",
+        "fullpath": "C:\\Users\\valle\\BingeWatch\\bingewatch-frontend\\BingeWatch\\components\\TVShowNavigationBar\\PopularTvShowsScreen.mdx",
+        "link": "",
+        "hidden": false,
+        "slug": "components-tv-show-navigation-bar-popular-tv-shows-screen",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "popular-tv-shows-screen",
+            "depth": 1,
+            "value": "Popular TV-Shows Screen"
+          },
+          {
+            "slug": "init",
+            "depth": 2,
+            "value": "init()"
+          },
+          {
+            "slug": "onpressshow",
+            "depth": 2,
+            "value": "onPressShow()"
+          }
+        ]
+      }
+    },
+    {
+      "key": "components/TVShowNavigationBar/TVShowGenreScreen.mdx",
+      "value": {
+        "name": "TV-Show Genre Screen",
+        "route": "/tvshowgenrescreen",
+        "id": "1af9e9ee4649887c64da71f7fb6eb1d5",
+        "filepath": "components/TVShowNavigationBar/TVShowGenreScreen.mdx",
+        "fullpath": "C:\\Users\\valle\\BingeWatch\\bingewatch-frontend\\BingeWatch\\components\\TVShowNavigationBar\\TVShowGenreScreen.mdx",
+        "link": "",
+        "hidden": false,
+        "slug": "components-tv-show-navigation-bar-tv-show-genre-screen",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "tv-show-genre-screen",
+            "depth": 1,
+            "value": "TV-Show Genre Screen"
+          },
+          {
+            "slug": "init",
+            "depth": 2,
+            "value": "init()"
+          },
+          {
+            "slug": "rendergenres",
+            "depth": 2,
+            "value": "renderGenres()"
+          },
+          {
+            "slug": "ongenrepress",
+            "depth": 2,
+            "value": "onGenrePress()"
+          }
+        ]
+      }
+    },
+    {
+      "key": "components/TVShowNavigationBar/TVShowNavigationBar.mdx",
+      "value": {
+        "name": "TV-Show Navigation Bar",
+        "route": "/tvshownavigationbar",
+        "id": "54d5a3064a15abeb9245d608fac31eb5",
+        "filepath": "components/TVShowNavigationBar/TVShowNavigationBar.mdx",
+        "fullpath": "C:\\Users\\valle\\BingeWatch\\bingewatch-frontend\\BingeWatch\\components\\TVShowNavigationBar\\TVShowNavigationBar.mdx",
+        "link": "",
+        "hidden": false,
+        "slug": "components-tv-show-navigation-bar-tv-show-navigation-bar",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "tv-show-navigation-bar",
+            "depth": 1,
+            "value": "TV-Show Navigation Bar"
+          },
+          {
+            "slug": "onpresssearch",
+            "depth": 2,
+            "value": "onPressSearch()"
+          }
+        ]
+      }
+    },
+    {
+      "key": "screens/LandingScreen/LandingScreen.mdx",
+      "value": {
+        "name": "Landing Screen",
+        "route": "/landingscreen",
+        "id": "e9b390ead0c7b13beee1231c74180a45",
+        "filepath": "screens/LandingScreen/LandingScreen.mdx",
+        "fullpath": "C:\\Users\\valle\\BingeWatch\\bingewatch-frontend\\BingeWatch\\screens\\LandingScreen\\LandingScreen.mdx",
+        "link": "",
+        "hidden": false,
+        "slug": "screens-landing-screen-landing-screen",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "landing-screen",
+            "depth": 1,
+            "value": "Landing Screen"
+          },
+          {
+            "slug": "handlesignin",
+            "depth": 2,
+            "value": "handleSignIn()"
+          },
+          {
+            "slug": "handlesignup",
+            "depth": 2,
+            "value": "handleSignUp()"
+          }
+        ]
+      }
+    },
+    {
+      "key": "components/MovieNavigationBar/MovieSearchScreen/MovieSearchScreen.mdx",
+      "value": {
+        "name": "Movie Search Screen",
+        "route": "/moviesearchscreen",
+        "id": "88c10664dc7b482cac6701f118a78a84",
+        "filepath": "components/MovieNavigationBar/MovieSearchScreen/MovieSearchScreen.mdx",
+        "fullpath": "C:\\Users\\valle\\BingeWatch\\bingewatch-frontend\\BingeWatch\\components\\MovieNavigationBar\\MovieSearchScreen\\MovieSearchScreen.mdx",
+        "link": "",
+        "hidden": false,
+        "slug": "components-movie-navigation-bar-movie-search-screen-movie-search-screen",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "movie-search-screen",
+            "depth": 1,
+            "value": "Movie Search Screen"
+          },
+          {
+            "slug": "onchangesearchsearchtext-string",
+            "depth": 2,
+            "value": "onChangeSearch(searchText: String)"
+          },
+          {
+            "slug": "rendermovies",
+            "depth": 2,
+            "value": "renderMovies()"
+          },
+          {
+            "slug": "onpressmovie",
+            "depth": 2,
+            "value": "onPressMovie()"
+          }
+        ]
+      }
+    },
+    {
+      "key": "components/MovieNavigationBar/MovieSelectedGenreScreen/MovieSelectedGenreScreen.mdx",
+      "value": {
+        "name": "Movie Selected Genre Screen",
+        "route": "/movieselectedgenrescreen",
+        "id": "e19a309ea48f18bcf3ff2b0bd56c7ed3",
+        "filepath": "components/MovieNavigationBar/MovieSelectedGenreScreen/MovieSelectedGenreScreen.mdx",
+        "fullpath": "C:\\Users\\valle\\BingeWatch\\bingewatch-frontend\\BingeWatch\\components\\MovieNavigationBar\\MovieSelectedGenreScreen\\MovieSelectedGenreScreen.mdx",
+        "link": "",
+        "hidden": false,
+        "slug": "components-movie-navigation-bar-movie-selected-genre-screen-movie-selected-genre-screen",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "movie-selected-genre-screen",
+            "depth": 1,
+            "value": "Movie Selected Genre Screen"
+          },
+          {
+            "slug": "init",
+            "depth": 2,
+            "value": "init()"
+          },
+          {
+            "slug": "rendermovies",
+            "depth": 2,
+            "value": "renderMovies()"
+          },
+          {
+            "slug": "onpressmovie",
+            "depth": 2,
+            "value": "onPressMovie()"
+          },
+          {
+            "slug": "onpresssearch",
+            "depth": 2,
+            "value": "onPressSearch()"
+          }
+        ]
+      }
+    },
+    {
+      "key": "components/TVShowNavigationBar/TvShowSearchScreen/TvShowSearchScreen.mdx",
+      "value": {
+        "name": "TV-Show Search Screen",
+        "route": "/tvshowsearchscreen",
+        "id": "3729b09fc0b239a3b47de5eeb4a5d5a9",
+        "filepath": "components/TVShowNavigationBar/TvShowSearchScreen/TvShowSearchScreen.mdx",
+        "fullpath": "C:\\Users\\valle\\BingeWatch\\bingewatch-frontend\\BingeWatch\\components\\TVShowNavigationBar\\TvShowSearchScreen\\TvShowSearchScreen.mdx",
+        "link": "",
+        "hidden": false,
+        "slug": "components-tv-show-navigation-bar-tv-show-search-screen-tv-show-search-screen",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "tv-show-search-screen",
+            "depth": 1,
+            "value": "TV-Show Search Screen"
+          },
+          {
+            "slug": "onchangesearchsearchtext-string",
+            "depth": 2,
+            "value": "onChangeSearch(searchText: String)"
+          },
+          {
+            "slug": "rendertvshows",
+            "depth": 2,
+            "value": "renderTvShows()"
+          },
+          {
+            "slug": "onpresstvshow",
+            "depth": 2,
+            "value": "onPressTvShow()"
+          }
+        ]
+      }
+    },
+    {
+      "key": "components/TVShowNavigationBar/TvShowSelectedGenreScreen/TvShowSelectedGenreScreen.mdx",
+      "value": {
+        "name": "TV-show Selected Genre Screen",
+        "route": "/tvshowselectedgenrescreen",
+        "id": "76b58543a11bd35aecf957495bc06c45",
+        "filepath": "components/TVShowNavigationBar/TvShowSelectedGenreScreen/TvShowSelectedGenreScreen.mdx",
+        "fullpath": "C:\\Users\\valle\\BingeWatch\\bingewatch-frontend\\BingeWatch\\components\\TVShowNavigationBar\\TvShowSelectedGenreScreen\\TvShowSelectedGenreScreen.mdx",
+        "link": "",
+        "hidden": false,
+        "slug": "components-tv-show-navigation-bar-tv-show-selected-genre-screen-tv-show-selected-genre-screen",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "tv-show-selected-genre-screen",
+            "depth": 1,
+            "value": "TV-show Selected Genre Screen"
+          },
+          {
+            "slug": "init",
+            "depth": 2,
+            "value": "init()"
+          },
+          {
+            "slug": "rendertvshows",
+            "depth": 2,
+            "value": "renderTvShows()"
+          },
+          {
+            "slug": "onpressshow",
+            "depth": 2,
+            "value": "onPressShow()"
+          },
+          {
+            "slug": "onpresssearch",
+            "depth": 2,
+            "value": "onPressSearch()"
+          }
+        ]
+      }
+    },
+    {
+      "key": "screens/LandingScreen/LoginScreen/LoginScreen.mdx",
+      "value": {
+        "name": "Login Screen",
+        "route": "/loginscreen",
+        "id": "c7881080059113de6d7822266c8c4049",
+        "filepath": "screens/LandingScreen/LoginScreen/LoginScreen.mdx",
+        "fullpath": "C:\\Users\\valle\\BingeWatch\\bingewatch-frontend\\BingeWatch\\screens\\LandingScreen\\LoginScreen\\LoginScreen.mdx",
+        "link": "",
+        "hidden": false,
+        "slug": "screens-landing-screen-login-screen-login-screen",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "login-screen",
+            "depth": 1,
+            "value": "Login Screen"
+          },
+          {
+            "slug": "onsubmitdata-formdata",
+            "depth": 2,
+            "value": "onSubmit(data: FormData)"
+          },
+          {
+            "slug": "formdata-type",
+            "depth": 3,
+            "value": "FormData (Type)"
+          }
+        ]
+      }
+    },
+    {
+      "key": "screens/LandingScreen/SignUpScreen/SignUpScreen.mdx",
+      "value": {
+        "name": "Sign up Screen",
+        "route": "/signupscreen",
+        "id": "e004c7f9de3d2c95c6ccde2cc4c79428",
+        "filepath": "screens/LandingScreen/SignUpScreen/SignUpScreen.mdx",
+        "fullpath": "C:\\Users\\valle\\BingeWatch\\bingewatch-frontend\\BingeWatch\\screens\\LandingScreen\\SignUpScreen\\SignUpScreen.mdx",
+        "link": "",
+        "hidden": false,
+        "slug": "screens-landing-screen-sign-up-screen-sign-up-screen",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "sign-up-screen",
+            "depth": 1,
+            "value": "Sign up Screen"
+          },
+          {
+            "slug": "onsubmitdata-formdata",
+            "depth": 2,
+            "value": "onSubmit(data: FormData)"
+          },
+          {
+            "slug": "createuserandwatchlistindatabaseemail-string",
+            "depth": 2,
+            "value": "createUserAndWatchlistInDatabase(email: String)"
+          },
+          {
+            "slug": "formdata-type",
+            "depth": 3,
+            "value": "FormData (Type)"
+          }
+        ]
+      }
+    },
+    {
+      "key": "screens/MoviesScreen/MovieDetailsScreen/MovieDetailsScreen.mdx",
+      "value": {
+        "name": "Movie Details Screen",
+        "route": "/moviedetailsscreen",
+        "id": "e279c3fe9e82f370b8175bbcf1ac1ce8",
+        "filepath": "screens/MoviesScreen/MovieDetailsScreen/MovieDetailsScreen.mdx",
+        "fullpath": "C:\\Users\\valle\\BingeWatch\\bingewatch-frontend\\BingeWatch\\screens\\MoviesScreen\\MovieDetailsScreen\\MovieDetailsScreen.mdx",
+        "link": "",
+        "hidden": false,
+        "slug": "screens-movies-screen-movie-details-screen-movie-details-screen",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "movie-details-screen",
+            "depth": 1,
+            "value": "Movie Details Screen"
+          },
+          {
+            "slug": "handleaddtowatchlist",
+            "depth": 2,
+            "value": "handleAddToWatchlist()"
+          }
+        ]
+      }
+    },
+    {
+      "key": "screens/TVShowsScreen/TVShowDetailsScreen/TvShowDetailsScreen.mdx",
+      "value": {
+        "name": "TV-Show Details Screen",
+        "route": "/tvshowdetailsscreen",
+        "id": "37a0494e61b5b2fb9b227a429abcbd17",
+        "filepath": "screens/TVShowsScreen/TVShowDetailsScreen/TvShowDetailsScreen.mdx",
+        "fullpath": "C:\\Users\\valle\\BingeWatch\\bingewatch-frontend\\BingeWatch\\screens\\TVShowsScreen\\TVShowDetailsScreen\\TvShowDetailsScreen.mdx",
+        "link": "",
+        "hidden": false,
+        "slug": "screens-tv-shows-screen-tv-show-details-screen-tv-show-details-screen",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "tv-show-details-screen",
+            "depth": 1,
+            "value": "TV-Show Details Screen"
+          },
+          {
+            "slug": "init",
+            "depth": 2,
+            "value": "init()"
+          },
+          {
+            "slug": "rendergenres",
+            "depth": 2,
+            "value": "renderGenres()"
+          },
+          {
+            "slug": "handleaddtowatchlist",
+            "depth": 2,
+            "value": "handleAddToWatchlist()"
+          },
+          {
+            "slug": "renderseasontabs",
+            "depth": 2,
+            "value": "renderSeasonTabs()"
+          }
+        ]
+      }
+    },
+    {
+      "key": "screens/TVShowsScreen/TVShowDetailsScreen/TvShowSeasonTab.mdx",
+      "value": {
+        "name": "TV-Show Season Tab",
+        "route": "/tvshowseasontab",
+        "id": "29518ba4dfa229eb2d466010de0e311b",
+        "filepath": "screens/TVShowsScreen/TVShowDetailsScreen/TvShowSeasonTab.mdx",
+        "fullpath": "C:\\Users\\valle\\BingeWatch\\bingewatch-frontend\\BingeWatch\\screens\\TVShowsScreen\\TVShowDetailsScreen\\TvShowSeasonTab.mdx",
+        "link": "",
+        "hidden": false,
+        "slug": "screens-tv-shows-screen-tv-show-details-screen-tv-show-season-tab",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "tv-show-season-tab",
+            "depth": 1,
+            "value": "TV-Show Season Tab"
+          },
+          {
+            "slug": "init",
+            "depth": 2,
+            "value": "init()"
+          },
+          {
+            "slug": "renderepisodes",
+            "depth": 2,
+            "value": "renderEpisodes()"
+          }
+        ]
+      }
+    },
+    {
+      "key": "screens/WatchListScreen/TvShowWatchlistDetails/TvShowWatchlistDetails.mdx",
+      "value": {
+        "name": "TV-Show Watchlist Details",
+        "route": "/tvshowwatchlistdetails",
+        "id": "411c3fe4219bae0304840a6b1250de40",
+        "filepath": "screens/WatchListScreen/TvShowWatchlistDetails/TvShowWatchlistDetails.mdx",
+        "fullpath": "C:\\Users\\valle\\BingeWatch\\bingewatch-frontend\\BingeWatch\\screens\\WatchListScreen\\TvShowWatchlistDetails\\TvShowWatchlistDetails.mdx",
+        "link": "",
+        "hidden": false,
+        "slug": "screens-watch-list-screen-tv-show-watchlist-details-tv-show-watchlist-details",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "tv-show-watchlist-details",
+            "depth": 1,
+            "value": "TV-Show Watchlist Details"
+          },
+          {
+            "slug": "generatedata",
+            "depth": 2,
+            "value": "generateData()"
+          },
+          {
+            "slug": "renderepisodesforseasonseason-any",
+            "depth": 2,
+            "value": "renderEpisodesForSeason(season: any[])"
+          },
+          {
+            "slug": "handleonpresswatched",
+            "depth": 2,
+            "value": "handleOnPressWatched()"
+          },
+          {
+            "slug": "convertdatatoarray",
+            "depth": 2,
+            "value": "convertDataToArray()"
+          },
+          {
+            "slug": "renderdata",
+            "depth": 2,
+            "value": "renderData()"
+          }
+        ]
+      }
+    }
+  ],
+  "props": []
+}

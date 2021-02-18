@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
-import { StyleSheet, Image, Dimensions, TouchableOpacity } from "react-native";
+import { Image, Dimensions, TouchableOpacity } from "react-native";
 import { Text } from "../../components/Themed";
 import { getPopularMovies } from "../../api/movieApi";
 import * as S from "./styled";
@@ -72,19 +72,3 @@ export default function PopularMoviesScreen() {
     </S.Container>
   );
 }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: "bold",
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: "80%",
-  },
-});

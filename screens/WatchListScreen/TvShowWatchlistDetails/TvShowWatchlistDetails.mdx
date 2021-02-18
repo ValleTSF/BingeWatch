@@ -1,0 +1,78 @@
+---
+name: TV-Show Watchlist Details
+route: /tvshowwatchlistdetails
+---
+
+# TV-Show Watchlist Details
+
+This screen renders the seasons and episodes beloning to a specific tv-show that exists on a users watchlist.
+
+## generateData()
+
+---
+
+Parameter: none
+
+---
+
+//
+
+This function takes a users watchlist snapshot from Firebase and stores it in a variable. It also calls convertDataToArray(tvShows) and provides the function with the tvShow data from the snapshot.
+
+//
+
+## renderEpisodesForSeason(season: any[])
+
+---
+
+Parameter: any[]
+
+---
+
+//
+
+This function takes the season provided and renders all episodes in that season on the screen. All episodes contain a handleOnPressWatched() function.
+
+//
+
+## handleOnPressWatched()
+
+---
+
+Parameter: none
+
+---
+
+//
+
+This function deletes the episode from both the users watchlist on firebase and the episode list on the screen.
+
+//
+
+## convertDataToArray()
+
+---
+
+Parameter: none
+
+---
+
+//
+
+This function takes the tv-show data from Firebase and converts it into an array.
+
+//
+
+## renderData()
+
+---
+
+Parameter: none
+
+---
+
+//
+
+This function filters the tv-shows based on the show id to get the correct one. It then renders the seasons on the screen and for each season calls renderEpisodesForSeason() which is provided with the season.
+
+//

@@ -1,0 +1,33 @@
+---
+name: Login Screen
+route: /loginscreen
+---
+
+# Login Screen
+
+The login screen consists of two input fields one for email and one for password. It also contains a "Log in" button which will proceed to attempt a log in with the provided data.
+
+## onSubmit(data: FormData)
+
+---
+
+Parameter: FormData
+
+---
+
+//
+
+This function takes the formdata provided and attempts to authenticate the account on Firebase. If it is successful it navigates to the next screen.
+If it is unsuccessful it cancels the procedure.
+
+//
+
+### FormData (Type)
+
+---
+
+email: String
+
+password: String
+
+---

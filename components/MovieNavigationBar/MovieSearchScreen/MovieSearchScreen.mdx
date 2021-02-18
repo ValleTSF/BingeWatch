@@ -1,0 +1,50 @@
+---
+name: Movie Search Screen
+route: /moviesearchscreen
+---
+
+# Movie Search Screen
+
+This screen allows the user to search for movies. It renders movies matching the search criteria for every change in the search field.
+
+## onChangeSearch(searchText: String)
+
+---
+
+Parameter: String
+
+---
+
+//
+
+This function takes the string from the search field and calls the API and requests the movies matching the string. It takes the result and sets it in a variable. If the searchText is null the variable is set to an empty object.
+
+//
+
+## renderMovies()
+
+---
+
+Parameter: none
+
+---
+
+//
+
+This function takes the data from the API call and filters it to only get results with an image. It then returns a flatlist which renders all the movies. All movies rendered contain a onPressMovie() function.
+
+//
+
+## onPressMovie()
+
+---
+
+Parameter: none
+
+---
+
+//
+
+This function navigates the user to the movie details screen. It also sends the movie data to the movie details screen.
+
+//

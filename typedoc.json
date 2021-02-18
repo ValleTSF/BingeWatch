@@ -1,0 +1,6 @@
+{
+    "entryPoints": ["./screens"],
+    "out": "doc",
+    "theme": "default",
+    "mode": "files"
+  }

@@ -1,0 +1,50 @@
+---
+name: TV-Show Search Screen
+route: /tvshowsearchscreen
+---
+
+# TV-Show Search Screen
+
+This screen allows the user to search for tv-shows. It renders tv-shows matching the search criteria for every change in the search field.
+
+## onChangeSearch(searchText: String)
+
+---
+
+Parameter: String
+
+---
+
+//
+
+This function takes the string from the search field and calls the API and requests the tv-shows matching the string. It takes the result and sets it in a variable. If the searchText is null the variable is set to an empty object.
+
+//
+
+## renderTvShows()
+
+---
+
+Parameter: none
+
+---
+
+//
+
+This function takes the data from the API call and filters it to only get results with an image. It then returns a flatlist which renders all the tv-shows. All tv-shows rendered contain a onPressTvShow() function.
+
+//
+
+## onPressTvShow()
+
+---
+
+Parameter: none
+
+---
+
+//
+
+This function navigates the user to the tv-show details screen. It also sends the tv-show data to the tv-show details screen.
+
+//

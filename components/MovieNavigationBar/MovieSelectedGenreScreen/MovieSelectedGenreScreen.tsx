@@ -2,14 +2,7 @@ import { Feather } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import { Card, Container, Header } from "native-base";
 import React, { useEffect, useState } from "react";
-import {
-  View,
-  Text,
-  Dimensions,
-  TouchableOpacity,
-  Image,
-  StatusBar,
-} from "react-native";
+import { Dimensions, TouchableOpacity, Image, StatusBar } from "react-native";
 import { FlatList, ScrollView } from "react-native-gesture-handler";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { getMoviesOnGenre, getTvShowsOnGenre } from "../../../api/movieApi";
@@ -35,7 +28,7 @@ export default function MovieSelectedGenreScreen(props: any) {
     setData(data);
   };
 
-  const renderTvShows = () => {
+  const renderMovies = () => {
     const { results } = data;
     const filteredResults = results.filter(
       (m) => m.poster_path !== null && m.backdrop_path !== null
@@ -116,7 +109,7 @@ export default function MovieSelectedGenreScreen(props: any) {
         </TouchableOpacity>
       </Header>
       <ScrollView>
-        <S.Container>{renderTvShows()}</S.Container>
+        <S.Container>{renderMovies()}</S.Container>
       </ScrollView>
       <StatusBar backgroundColor="#b9042c" barStyle="dark-content" />
     </SafeAreaView>

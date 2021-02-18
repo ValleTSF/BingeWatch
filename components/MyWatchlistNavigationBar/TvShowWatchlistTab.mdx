@@ -1,0 +1,92 @@
+---
+name: TV-Show Watchlist Tab
+route: /tvshowwatchlisttab
+---
+
+# TV-Show Watchlist Tab
+
+This tab renders the tv-shows located on a users watchlist.
+
+## init()
+
+---
+
+Parameter: none
+
+---
+
+//
+
+This function takes the tv-show data from props. It then proceeds to call getWatchlistSnapshot() and convertDataToArray(tvShows) the latter function is provided with the tv-show data. The result is then stored in a variable.
+
+//
+
+## getWatchlistSnapshot()
+
+---
+
+Parameter: none
+
+---
+
+//
+
+This function gets the watchlistsnapshot from firebase and stores it in a variable.
+
+//
+
+## convertDataToArray(tvShows: any)
+
+---
+
+Parameter: any
+
+---
+
+//
+
+This function takes the tv-show data provided from Firebase and converts it to an array. It then stores the array in a variable.
+
+//
+
+## sortTvShowList()
+
+---
+
+Parameter: none
+
+---
+
+//
+
+This function sorts the tv-show list in alphabetical order.
+
+//
+
+## renderTvShowList()
+
+---
+
+Parameter: none
+
+---
+
+//
+
+This function calls sortTvShowList() and then proceeds to render the tv-shows on the screen. Each tv-show contains a handleOnPressDelete() function. The t-shows are also rendered in a swipeout component to support swiping.
+
+//
+
+## handleOnPressDelete()
+
+---
+
+Parameter: none
+
+---
+
+//
+
+this function deletes the tv-show from the users watchlist on Firebase and in the tv-show list being rendered on the screen.
+
+//
